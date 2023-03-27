@@ -61,6 +61,16 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		4FA72F2929D21B8400172B4B /* AccessModule */ = {
+			isa = PBXGroup;
+			children = (
+				4FCEE4DD29CE1434000232C2 /* View */,
+				4FA72F2329D2063B00172B4B /* Model */,
+				4FA72F2629D2074C00172B4B /* Presenter */,
+			);
+			path = AccessModule;
+			sourceTree = "<group>";
+		};
 		4FCEE4BD29CE0F5F000232C2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +92,7 @@
 			children = (
 				4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */,
 				4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */,
-				4FA72F2629D2074C00172B4B /* Presenter */,
-				4FA72F2329D2063B00172B4B /* Model */,
-				4FCEE4DD29CE1434000232C2 /* View */,
+				4FA72F2929D21B8400172B4B /* AccessModule */,
 				4FCEE4D229CE0F60000232C2 /* Assets.xcassets */,
 				4FCEE4D429CE0F60000232C2 /* LaunchScreen.storyboard */,
 				4FCEE4D729CE0F60000232C2 /* Info.plist */,

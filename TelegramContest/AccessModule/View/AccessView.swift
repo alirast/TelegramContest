@@ -57,6 +57,7 @@ class AccessView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+//FIXME: - not purple. need dark mode of application (info plist)
         backgroundColor = .purple
         addSubview(accessLabel)
         addSubview(accessButton)

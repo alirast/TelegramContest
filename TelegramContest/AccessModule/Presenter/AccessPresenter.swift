@@ -29,11 +29,11 @@ class AccessPresenter: AccessViewPresenterProtocol {
     }
     
     func setAccessButtonTitle() {
-        <#code#>
+        
     }
     
     func setAccessLabelTitle() {
-        <#code#>
+        
     }
     
     
