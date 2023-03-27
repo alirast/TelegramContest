@@ -29,10 +29,14 @@ class AccessView: UIView {
         view.play()
         return view
     }()
-    
+//FIXME: - shimmer animation for button
     lazy var accessButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 0.2039, green: 0.4706, blue: 0.9647, alpha: 1.0)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        button.layer.cornerRadius = 10
 //FIXME: - title should be set up in special method
         button.setTitle("Allow Access", for: .normal)
         return button
@@ -72,7 +76,8 @@ class AccessView: UIView {
             
             accessButton.topAnchor.constraint(equalTo: accessLabel.bottomAnchor, constant: 20),
             accessButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            accessButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            accessButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            accessButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 
