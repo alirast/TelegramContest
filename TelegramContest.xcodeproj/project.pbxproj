@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
+		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */; };
 		4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */; };
 		4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4CD29CE0F5F000232C2 /* AccessViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
+		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FCEE4C629CE0F5F000232C2 /* TelegramContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FA72F2329D2063B00172B4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FA72F2429D2064F00172B4B /* AccessModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FA72F2629D2074C00172B4B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4FA72F2729D2078600172B4B /* AccessPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		4FCEE4BD29CE0F5F000232C2 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +82,8 @@
 			children = (
 				4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */,
 				4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */,
+				4FA72F2629D2074C00172B4B /* Presenter */,
+				4FA72F2329D2063B00172B4B /* Model */,
 				4FCEE4DD29CE1434000232C2 /* View */,
 				4FCEE4D229CE0F60000232C2 /* Assets.xcassets */,
 				4FCEE4D429CE0F60000232C2 /* LaunchScreen.storyboard */,
@@ -157,8 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
+				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */,
 			);
