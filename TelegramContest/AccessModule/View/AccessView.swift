@@ -8,15 +8,13 @@
 import UIKit
 import Lottie
 
-
 protocol AccessViewDelegate: AnyObject {
-    
+    func didAllowAccess()
 }
 
 
 class AccessView: UIView {
 //FIXME: - remove delegate? because we have protocol for presenter, how sent to VC?
-    //access view has
     weak var delegate: AccessViewDelegate?
     lazy var duckView: LottieAnimationView = {
         var view = LottieAnimationView()
@@ -35,10 +33,9 @@ class AccessView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(red: 0.2039, green: 0.4706, blue: 0.9647, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 10
-//FIXME: - title should be set up in special method
-        button.setTitle("Allow Access", for: .normal)
+        button.addTarget(self, action: #selector(didPressAccessButton), for: .touchUpInside)
         return button
     }()
     
@@ -50,8 +47,6 @@ class AccessView: UIView {
         label.numberOfLines = 1
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-//FIXME: - title should be set up in special method
-        label.text = "Access Your Photos and Videos"
         return label
     }()
     
@@ -59,6 +54,9 @@ class AccessView: UIView {
         super.init(frame: frame)
 //FIXME: - not purple. need dark mode of application (info plist)
         backgroundColor = .purple
+//initial state of titles
+        accessLabel.text = "Access Your Photos and Videos"
+        accessButton.setTitle("Allow Access", for: .normal)
         addSubview(accessLabel)
         addSubview(accessButton)
         addSubview(duckView)
@@ -85,6 +83,10 @@ class AccessView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didPressAccessButton() {
+        delegate?.didAllowAccess()
     }
     
 }

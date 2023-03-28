@@ -7,33 +7,26 @@
 
 import Foundation
 
+//protocol for presenter
 protocol AccessViewPresenterProtocol: AnyObject {
-//FIXME: - add router
-    init(view: AccessViewProtocol)
-    
-    func setAccessButtonTitle()
-    
-    func setAccessLabelTitle()
+    func setAccessTitles()
 }
 
+//protocol for view
 //if button pressed once - title changes forever
 protocol AccessViewProtocol: AnyObject {
-    func giveAccess()
+    func showNewTitles(_ condition: Bool)
 }
 
 class AccessPresenter: AccessViewPresenterProtocol {
-    weak var accessView: AccessViewProtocol?
+    //link for view through protocol
+    weak var accessView: AccessViewProtocol!
+    //link for model - directly
+    var accessModel: AccessModel!
     
-    required init(view: AccessViewProtocol) {
-        self.accessView = view
-    }
-    
-    func setAccessButtonTitle() {
-        
-    }
-    
-    func setAccessLabelTitle() {
-        
+    func setAccessTitles() {
+        //accessModel?.isAllowed = true
+        accessView?.showNewTitles(true)
     }
     
     
