@@ -14,7 +14,6 @@ protocol AccessViewDelegate: AnyObject {
 
 
 class AccessView: UIView {
-//FIXME: - remove delegate? because we have protocol for presenter, how sent to VC?
     weak var delegate: AccessViewDelegate?
     lazy var duckView: LottieAnimationView = {
         var view = LottieAnimationView()
@@ -54,7 +53,7 @@ class AccessView: UIView {
         super.init(frame: frame)
 //FIXME: - not purple. need dark mode of application (info plist)
         backgroundColor = .purple
-//initial state of titles
+        //initial state of titles
         accessLabel.text = "Access Your Photos and Videos"
         accessButton.setTitle("Allow Access", for: .normal)
         addSubview(accessLabel)
@@ -86,6 +85,9 @@ class AccessView: UIView {
     }
     
     @objc func didPressAccessButton() {
+//FIXME: - go to view controller with pictures
+//FIXME: - save settings for titles if access allowed
+        //from view to view controller
         delegate?.didAllowAccess()
     }
     

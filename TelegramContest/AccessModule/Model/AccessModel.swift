@@ -10,3 +10,4 @@ import Foundation
 struct AccessModel: Decodable {
     var isAllowed: Bool
 }
+

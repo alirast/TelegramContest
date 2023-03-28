@@ -7,27 +7,21 @@
 
 import Foundation
 
-//protocol for presenter
-protocol AccessViewPresenterProtocol: AnyObject {
-    func setAccessTitles()
-}
-
 //protocol for view
 //if button pressed once - title changes forever
 protocol AccessViewProtocol: AnyObject {
-    func showNewTitles(_ condition: Bool)
+    func showNewTitles()
 }
 
-class AccessPresenter: AccessViewPresenterProtocol {
-    //link for view through protocol
-    weak var accessView: AccessViewProtocol!
-    //link for model - directly
-    var accessModel: AccessModel!
+class AccessPresenter {
+    weak var accessView: AccessViewProtocol?
     
-    func setAccessTitles() {
-        //accessModel?.isAllowed = true
-        accessView?.showNewTitles(true)
+    init(accessView: AccessViewProtocol) {
+        self.accessView = accessView
     }
     
-    
+    //from presenter to view controller
+    func setAccessTitles() {
+        accessView?.showNewTitles()
+    }
 }

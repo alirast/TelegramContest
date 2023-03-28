@@ -8,10 +8,10 @@
 import UIKit
 
 class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProtocol {
-    //link to presenter
-    var presenter: AccessViewPresenterProtocol!
     //link to view with layout
     var accessView = AccessView()
+    //link to presenter
+    lazy var presenter = AccessPresenter(accessView: self)
 
     override func loadView() {
         //changing system view to our custom access view
@@ -24,20 +24,17 @@ class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProt
     }
     
     //method from delegate (access view)
+    //button tapped
+    //from view controller to presenter
     func didAllowAccess() {
-//FIXME: - what method should be from presenter?
-//FIXME: - why nil?? the problem should be in assmebly layer and scene delegate
         presenter.setAccessTitles()
     }
     
-    func showNewTitles(_ condition: Bool) {
-        //condition = data from model
-        if condition {
-            accessView.accessLabel.text = "Edit"
-            accessView.accessButton.setTitle("Edit", for: .normal)
-        }
+    //from presenter to view controller
+    func showNewTitles() {
+        accessView.accessLabel.text = "Edit My Photos and Videos"
+        accessView.accessButton.setTitle("Let's go", for: .normal)
+        
     }
-
-
 }
 
