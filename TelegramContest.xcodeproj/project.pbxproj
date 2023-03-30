@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FCEE4C629CE0F5F000232C2 /* TelegramContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			children = (
 				4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */,
 				4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */,
+				4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */,
 				4FA72F2929D21B8400172B4B /* AccessModule */,
 				4FCEE4D229CE0F60000232C2 /* Assets.xcassets */,
 				4FCEE4D429CE0F60000232C2 /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
 				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
+				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */,
 			);
