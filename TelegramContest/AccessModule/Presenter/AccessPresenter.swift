@@ -15,7 +15,8 @@ protocol AccessViewProtocol: AnyObject {
 
 class AccessPresenter {
     weak var accessView: AccessViewProtocol?
-    
+    //not weak reference
+    var router: RouterProtocol?
     init(accessView: AccessViewProtocol) {
         self.accessView = accessView
     }
@@ -23,7 +24,8 @@ class AccessPresenter {
     //from presenter to view controller
     func setAccessTitles() {
 //from access module presenter to router showGrid
-//FIXME: - here should be router
+//FIXME: - router function finish
+        router?.showPhotoGrid()
         accessView?.showNewTitles()
     }
 }

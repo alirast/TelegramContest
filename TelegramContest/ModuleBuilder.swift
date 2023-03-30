@@ -6,4 +6,8 @@
 //
 
 import UIKit
-
+protocol ModuleBuilderProtocol {
+    func createAccessModule(router: RouterProtocol) -> UIViewController
+    func createPhotoGridModule(photo: Photo, router: RouterProtocol) -> UIViewController
+    func createDrawingModule(router: RouterProtocol) -> UIViewController
+}
