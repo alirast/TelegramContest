@@ -54,7 +54,7 @@ class AccessView: UIView {
 //FIXME: - not purple. need dark mode of application (info plist)
         backgroundColor = .purple
         //initial state of titles
-        accessLabel.text = "Access Your Photos and Videos"
+        accessLabel.text = "Access Your Photos"
         accessButton.setTitle("Allow Access", for: .normal)
         addSubview(accessLabel)
         addSubview(accessButton)

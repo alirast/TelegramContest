@@ -32,7 +32,7 @@ class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProt
     
     //from presenter to view controller
     func showNewTitles() {
-        accessView.accessLabel.text = "Edit My Photos and Videos"
+        accessView.accessLabel.text = "Edit My Photos"
         accessView.accessButton.setTitle("Let's go", for: .normal)
         
     }
