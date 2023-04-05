@@ -13,18 +13,24 @@ protocol AccessViewProtocol: AnyObject {
     func showNewTitles()
 }
 
-class AccessPresenter {
+protocol AccessPresenterProtocol: AnyObject {
+    init(accessView: AccessViewProtocol, router: RouterProtocol)
+    func setAccessTitles()
+}
+
+class AccessPresenter: AccessPresenterProtocol {
     weak var accessView: AccessViewProtocol?
     //not weak reference
     var router: RouterProtocol?
-    init(accessView: AccessViewProtocol) {
+    required init(accessView: AccessViewProtocol, router: RouterProtocol) {
         self.accessView = accessView
+        self.router = router
     }
     
     //from presenter to view controller
     func setAccessTitles() {
 //from access module presenter to router showGrid
-//FIXME: - router function finish
+//TODO: - router function finish
         router?.showPhotoGrid()
         accessView?.showNewTitles()
     }
