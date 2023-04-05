@@ -46,16 +46,6 @@ class Router: RouterProtocol {
         
     }
 }
+//TODO: - methods of showing pictures in router (should create secondVC)
+//need navigation controller to go back to photoVC from drawingVC
 
-//child coordinators
-//navigating backwards for from drawing to photogrid
-//passing data between view controllers for from photo grid to drawingvc
-
-//coordinating tab bar
-//handling segues
-
-//protocols and closures
-
-//реализовать класс роутера
-//реализовать методы показа фоток в роутере - должен создавать второй вью контроллер
-//но обязатеьно нужен навигейшн который будет возвращать к фотокам из рисовалки
