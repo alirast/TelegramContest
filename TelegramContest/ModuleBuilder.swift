@@ -23,7 +23,6 @@ class ModuleBuilder: ModuleBuilderProtocol {
     
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController {
         let view = PhotoGridViewController()
-        //presenter
         return view
     }
 

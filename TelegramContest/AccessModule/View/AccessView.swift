@@ -85,7 +85,6 @@ class AccessView: UIView {
     }
     
     @objc func didPressAccessButton() {
-//FIXME: - go to view controller with pictures
 //FIXME: - save settings for titles if access allowed
         //from view to view controller
         delegate?.didAllowAccess()

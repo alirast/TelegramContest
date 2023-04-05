@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//TODO: - need navigation controller to go back to photoVC from drawingVC
 //requirements for all the classes
 protocol RouterMain {
     var navigationController: UINavigationController? { get set }
@@ -32,6 +33,7 @@ class Router: RouterProtocol {
     func accessViewController() {
         if let navigationController = navigationController {
             guard let accessViewController = moduleBuilder?.createAccessModule(router: self) else { return }
+//FIXME: - remove the accessViewController from the stack. Create stack from photoGridVC. because don't need back button on photoGridVC
             navigationController.viewControllers = [accessViewController]
         }
     }
@@ -46,6 +48,5 @@ class Router: RouterProtocol {
         
     }
 }
-//TODO: - methods of showing pictures in router (should create secondVC)
-//need navigation controller to go back to photoVC from drawingVC
+
 

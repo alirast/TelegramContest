@@ -10,23 +10,19 @@ import Photos
 
 class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
 //TODO: - convert PHAsset to UIIMage for drawing canvas
-//TODO: - add key NSPhotoLibraryUsageDescription to info.plist
-//TODO: - presenter for PhotoGridViewController for router
+//TODO: - presenter for PhotoGridViewController for router (for drawingVC)
+
     var imageArray = [PHAsset]()
-    var collectionView = UICollectionView()
+    var collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
     
 //MARK: - viewDidLoad
     override func viewDidLoad() {
+        super.viewDidLoad()
+        createCollectionView()
         getPhotos()
     }
-//MARK: - viewDidAppear
-    override func viewDidAppear(_ animated: Bool) {
-        createCollectionView()
-    }
-    
 //MARK: - createCollectionView
     func createCollectionView() {
-        collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         //FIXME: - dont need background color if app mode is dark
         collectionView.backgroundColor = .black
         collectionView.dataSource = self
