@@ -35,7 +35,9 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             print(status)
             if status == .denied || status == .restricted {
-                self?.showAlert()
+                DispatchQueue.main.async {
+                    self?.showAlert()
+                }
             } else {
                 let assets = PHAsset.fetchAssets(with: .image, options: nil)
                 assets.enumerateObjects { (object, _, _) in
@@ -51,6 +53,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
         }
     }
 //MARK: - showAlert
+//TODO: - add handler (which one?)
     func showAlert() {
         let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
