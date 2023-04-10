@@ -23,6 +23,8 @@
 		4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4DE29CE14BF000232C2 /* AccessView.swift */; };
 		4FCEE4E229CE162D000232C2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4FCEE4E129CE162D000232C2 /* Lottie */; };
 		4FCEE4E429CE1713000232C2 /* duck.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEE4E329CE1713000232C2 /* duck.json */; };
+		4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */; };
+		4FF2E87029E48DFF002F9FF3 /* PenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86F29E48DFF002F9FF3 /* PenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		4FCEE4D729CE0F60000232C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCEE4DE29CE14BF000232C2 /* AccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessView.swift; sourceTree = "<group>"; };
 		4FCEE4E329CE1713000232C2 /* duck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duck.json; sourceTree = "<group>"; };
+		4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		4FF2E86F29E48DFF002F9FF3 /* PenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
+				4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */,
+				4FF2E86F29E48DFF002F9FF3 /* PenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,9 +243,11 @@
 				4FC5C99829E02C67009A351B /* ToolType.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
+				4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
+				4FF2E87029E48DFF002F9FF3 /* PenView.swift in Sources */,
 				4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

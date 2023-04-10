@@ -32,6 +32,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
     }
 //MARK: - getPhotos
     func getPhotos() {
+//FIXME: - first - accessed and then after else - denied
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             print(status)
             if status == .denied || status == .restricted {
