@@ -25,6 +25,7 @@
 		4FCEE4E429CE1713000232C2 /* duck.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEE4E329CE1713000232C2 /* duck.json */; };
 		4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */; };
 		4FF2E87029E48DFF002F9FF3 /* PenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86F29E48DFF002F9FF3 /* PenView.swift */; };
+		4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		4FCEE4E329CE1713000232C2 /* duck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duck.json; sourceTree = "<group>"; };
 		4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		4FF2E86F29E48DFF002F9FF3 /* PenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenView.swift; sourceTree = "<group>"; };
+		4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C99729E02C67009A351B /* ToolType.swift */,
+				4FF2E87129E494CD002F9FF3 /* DrawingVC */,
 				4FC5C99A29E02C89009A351B /* View */,
 			);
 			path = DrawingModule;
@@ -156,6 +159,14 @@
 				4FCEE4DE29CE14BF000232C2 /* AccessView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4FF2E87129E494CD002F9FF3 /* DrawingVC */ = {
+			isa = PBXGroup;
+			children = (
+				4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */,
+			);
+			path = DrawingVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
+				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
 				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
 				4FC5C99829E02C67009A351B /* ToolType.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
