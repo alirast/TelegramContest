@@ -11,7 +11,7 @@ import Photos
 class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
 //TODO: - convert PHAsset to UIIMage for drawing canvas
 //TODO: - presenter for PhotoGridViewController for router (for drawingVC)
-
+    
     var imageArray = [PHAsset]()
     var collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
     
@@ -85,6 +85,7 @@ extension PhotoGridViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //TODO: - transition to drawingVC (through router, not through present(_:animated:)
+        
     }
 }
 //MARK: - extensionDelegateFlowLayout

@@ -24,7 +24,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate {
         canvasView.backgroundColor = .orange
         canvasView.drawing = drawing
         canvasView.delegate = self
-        view.addSubview(canvasView)
+        //view.addSubview(canvasView)
+        view.backgroundColor = .cyan
     }
     
     override func viewDidLayoutSubviews() {

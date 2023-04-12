@@ -45,7 +45,10 @@ class Router: RouterProtocol {
         }
     }
     func drawingViewController() {
-        
+        if let navigationController = navigationController {
+            guard let drawingViewController = moduleBuilder?.createDrawingModule(router: self) else { return }
+            navigationController.pushViewController(drawingViewController, animated: true)
+        }
     }
 }
 

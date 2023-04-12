@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */; };
+		4F0E19C229E706E80042125A /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E19C129E706E80042125A /* ToolView.swift */; };
 		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
 		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
-		4FB936CA29E5912C00ADA243 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB936C929E5912C00ADA243 /* ToolView.swift */; };
-		4FC5C99829E02C67009A351B /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C99729E02C67009A351B /* ToolType.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
 		4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */; };
 		4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */; };
@@ -31,13 +30,12 @@
 
 /* Begin PBXFileReference section */
 		4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F0E19C129E706E80042125A /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
 		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
-		4FB936C929E5912C00ADA243 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
-		4FC5C99729E02C67009A351B /* ToolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolType.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
 		4FCEE4C629CE0F5F000232C2 /* TelegramContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +101,7 @@
 		4FB936C829E5910A00ADA243 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4FB936C929E5912C00ADA243 /* ToolView.swift */,
+				4F0E19C129E706E80042125A /* ToolView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +109,7 @@
 		4FB936CB29E5913C00ADA243 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4FF2E86F29E48DFF002F9FF3 /* PenView.swift */,
 				4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */,
 			);
 			path = Sources;
@@ -119,7 +118,6 @@
 		4FC5C99929E02C6E009A351B /* DrawingModule */ = {
 			isa = PBXGroup;
 			children = (
-				4FC5C99729E02C67009A351B /* ToolType.swift */,
 				4FB936C829E5910A00ADA243 /* Extensions */,
 				4FF2E87129E494CD002F9FF3 /* DrawingVC */,
 				4FC5C99A29E02C89009A351B /* View */,
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
-				4FF2E86F29E48DFF002F9FF3 /* PenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,16 +264,15 @@
 			files = (
 				4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */,
 				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
-				4FB936CA29E5912C00ADA243 /* ToolView.swift in Sources */,
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
 				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
 				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
-				4FC5C99829E02C67009A351B /* ToolType.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
 				4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
+				4F0E19C229E706E80042125A /* ToolView.swift in Sources */,
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
 				4FF2E87029E48DFF002F9FF3 /* PenView.swift in Sources */,

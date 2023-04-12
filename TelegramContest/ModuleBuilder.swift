@@ -22,12 +22,13 @@ class ModuleBuilder: ModuleBuilderProtocol {
     }
     
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController {
-        let view = PhotoGridViewController()
-        return view
+        let photoGridView = PhotoGridViewController()
+        return photoGridView
     }
 
     func createDrawingModule(router: RouterProtocol) -> UIViewController {
-        return UIViewController()
+        let drawingView = DrawingViewController()
+        return drawingView
     }
 
 }
