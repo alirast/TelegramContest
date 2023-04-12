@@ -8,18 +8,20 @@
 import UIKit
 import Photos
 
-class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
+//everything for view
+
+class PhotoGridViewController: UIViewController, UICollectionViewDelegate, PhotoGridViewProtocol {
 //TODO: - convert PHAsset to UIIMage for drawing canvas
 //TODO: - presenter for PhotoGridViewController for router (for drawingVC)
-    
-    var imageArray = [PHAsset]()
+    var presenter: PhotoGridPresenterProtocol!
+    //var imageArray = [PHAsset]()
     var collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
     
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         createCollectionView()
-        getPhotos()
+        //getPhotos()
     }
 //MARK: - createCollectionView
     func createCollectionView() {
@@ -43,9 +45,9 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
                 let assets = PHAsset.fetchAssets(with: .image, options: nil)
                 assets.enumerateObjects { (object, _, _) in
                     print(object)
-                    self?.imageArray.append(object)
+                    //self?.imageArray.append(object)
                 }
-                self?.imageArray.reverse()
+                //self?.imageArray.reverse()
                 //update ui on main thread
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
@@ -64,13 +66,14 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate {
 //MARK: - extensionDataSource
 extension PhotoGridViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return presenter.pictures?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         //get particular asset for particular index
-        let asset = self.imageArray[indexPath.row]
+        //let asset = self.imageArray[indexPath.row]
+        guard let asset = presenter.pictures?[indexPath.row] else { return UICollectionViewCell() }
         //get image from the asset because asset is not an image yet
         //converting to UIImage
         let manager = PHImageManager.default()
@@ -84,8 +87,9 @@ extension PhotoGridViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//TODO: - transition to drawingVC (through router, not through present(_:animated:)
-        
+//TODO: - transition to drawingVC (through presenter and router, not through present(_:animated:)
+        let picture = presenter.pictures?[indexPath.row]
+        presenter.tapOnThePicture(picture: picture)
     }
 }
 //MARK: - extensionDelegateFlowLayout

@@ -29,7 +29,7 @@ class AccessPresenter: AccessPresenterProtocol {
     
     //from presenter to view controller
     func setAccessTitles() {
-//from access module presenter to router showGrid
+        //from access module presenter to router showGrid
         router?.showPhotoGrid()
         accessView?.showNewTitles()
     }
