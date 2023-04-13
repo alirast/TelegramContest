@@ -14,14 +14,14 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
 //TODO: - convert PHAsset to UIIMage for drawing canvas
 //TODO: - presenter for PhotoGridViewController for router (for drawingVC)
     var presenter: PhotoGridPresenterProtocol!
-    //var imageArray = [PHAsset]()
+    var imageArray = [PHAsset]()
     var collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
     
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         createCollectionView()
-        //getPhotos()
+        presenter.getPhotos()
     }
 //MARK: - createCollectionView
     func createCollectionView() {
@@ -32,8 +32,15 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(collectionView)
     }
+    
+    func showPhotos(_ photos: [PHAsset]) {
+        self.imageArray = photos
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 //MARK: - getPhotos
-    func getPhotos() {
+    /*func getPhotos() {
 //FIXME: - first - accessed and then after else - denied
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             print(status)
@@ -54,7 +61,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
                 }
             }
         }
-    }
+    }*/
 //MARK: - showAlert
 //TODO: - add handler (which one?)
     func showAlert() {
@@ -73,6 +80,7 @@ extension PhotoGridViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         //get particular asset for particular index
         //let asset = self.imageArray[indexPath.row]
+        //maybe item here
         guard let asset = presenter.pictures?[indexPath.row] else { return UICollectionViewCell() }
         //get image from the asset because asset is not an image yet
         //converting to UIImage

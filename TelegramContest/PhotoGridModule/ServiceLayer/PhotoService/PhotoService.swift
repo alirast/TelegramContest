@@ -36,6 +36,8 @@ class PhotoService: PhotoServiceProtocol {
             print(object)
             assetArray.append(object)
         }
-        completion(assetArray)
+        DispatchQueue.main.async {
+            completion(assetArray)
+        }
     }
 }

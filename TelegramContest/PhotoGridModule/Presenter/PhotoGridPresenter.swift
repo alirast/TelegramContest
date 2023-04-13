@@ -9,7 +9,7 @@ import Foundation
 import Photos
 //protocol for view
 protocol PhotoGridViewProtocol: AnyObject {
-    
+    func showPhotos(_ photos: [PHAsset])
 }
 
 //protocol for presenter
@@ -39,31 +39,12 @@ class PhotoGridPresenter: PhotoGridPresenterProtocol {
     
     //get photos should be in presenter - here
     func getPhotos() {
-        //photoService.getPhotos()
-//FIXME: - first - accessed and then after else - denied
-        PHPhotoLibrary.requestAuthorization { [weak self] status in
-            print(status)
-            if status == .denied || status == .restricted {
-                DispatchQueue.main.async {
-                    
-                }
-            } else {
-                let assets = PHAsset.fetchAssets(with: .image, options: nil)
-                assets.enumerateObjects { (object, _, _) in
-                    print(object)
-                    //pictures?.append(object)
-                }
-                //pictures?.reverse()
-                //update ui on main thread
-                DispatchQueue.main.async {
-                    
-                    //self?.collectionView.reloadData()
-                }
-            }
+//FIXME: - getPhotos nil for presenter
+        photoService.getPhotos { [weak self] assets in
+            self?.photoGridView?.showPhotos(assets)
         }
     }
 
-    
     func tapOnThePicture(picture: PHAsset?) {
         
     }
