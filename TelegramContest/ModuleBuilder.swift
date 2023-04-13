@@ -22,6 +22,7 @@ class ModuleBuilder: ModuleBuilderProtocol {
     }
     
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController {
+//FIXME: - should go to presenter not to controller
         let photoGridView = PhotoGridViewController()
         return photoGridView
     }
