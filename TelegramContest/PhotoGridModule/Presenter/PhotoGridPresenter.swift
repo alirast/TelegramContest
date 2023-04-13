@@ -15,27 +15,31 @@ protocol PhotoGridViewProtocol: AnyObject {
 //protocol for presenter
 protocol PhotoGridPresenterProtocol: AnyObject {
     var pictures: [PHAsset]? { get set }
-    init(photoGridView: PhotoGridViewProtocol, router: RouterProtocol)
-    func getPictures()
+    init(photoGridView: PhotoGridViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol)
+    func getPhotos()
     //to give picture from didSelect to drawingVC
     func tapOnThePicture(picture: PHAsset?)
 }
 
 class PhotoGridPresenter: PhotoGridPresenterProtocol {
+    //link to view
     weak var photoGridView: PhotoGridViewProtocol?
     var router: RouterProtocol?
+    let photoService: PhotoServiceProtocol
     var pictures: [PHAsset]?
     
     
-    required init(photoGridView: PhotoGridViewProtocol, router: RouterProtocol) {
+    
+    required init(photoGridView: PhotoGridViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol) {
         self.photoGridView = photoGridView
+        self.photoService = photoService
         self.router = router
-        getPictures()
+        getPhotos()
     }
     
     //get photos should be in presenter - here
-//TODO: - special class
-    func getPictures() {
+    func getPhotos() {
+        //photoService.getPhotos()
 //FIXME: - first - accessed and then after else - denied
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             print(status)

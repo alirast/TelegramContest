@@ -9,28 +9,33 @@ import Foundation
 import Photos
 
 protocol PhotoServiceProtocol {
-    func getPhotos()
+    func requestAuthorization(completion: @escaping (Bool) -> Void)
+    func getPhotos(completion: @escaping ([PHAsset]) -> Void)
 }
 class PhotoService: PhotoServiceProtocol {
-    func getPhotos() {
+    func requestAuthorization(completion: @escaping (Bool) -> Void) {
         PHPhotoLibrary.requestAuthorization { status in
             print(status)
-            if status == .denied || status == .restricted {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if status == .denied || status == .restricted {
+                    completion(false)
                     //showAlert
-                }
-            } else {
-                let assets = PHAsset.fetchAssets(with: .image, options: nil)
-                assets.enumerateObjects { (object, _, _) in
-                    print(object)
-                    //imageArray.append(object)
-                }
-                //imageArray.reverse()
-                DispatchQueue.main.async {
-                    //collectionView.reloadData()
+                } else {
+                    completion(true)
                 }
             }
-            
         }
+    }
+
+    func getPhotos(completion: @escaping ([PHAsset]) -> Void) {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        var assetArray = [PHAsset]()
+        assets.enumerateObjects { (object, _, _) in
+            print(object)
+            assetArray.append(object)
+        }
+        completion(assetArray)
     }
 }
