@@ -24,10 +24,14 @@ class ModuleBuilder: ModuleBuilderProtocol {
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController {
 //FIXME: - should go to presenter not to controller
         let photoGridView = PhotoGridViewController()
+        let photoService = PhotoService()
+        let photoGridPresenter = PhotoGridPresenter(photoGridView: photoGridView, photoService: photoService, router: router)
+        photoGridView.presenter = photoGridPresenter
         return photoGridView
     }
 
     func createDrawingModule(router: RouterProtocol) -> UIViewController {
+//TODO: - create presenter
         let drawingView = DrawingViewController()
         return drawingView
     }

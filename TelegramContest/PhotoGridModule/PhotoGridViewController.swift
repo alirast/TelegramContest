@@ -21,6 +21,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
     override func viewDidLoad() {
         super.viewDidLoad()
         createCollectionView()
+//FIXME: - we dont have presenter maybe need to fix in router
         presenter.getPhotos()
     }
 //MARK: - createCollectionView
