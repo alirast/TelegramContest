@@ -9,29 +9,26 @@ import Foundation
 import Photos
 
  protocol PhotoServiceProtocol {
-    func requestAuthorization(completion: @escaping (Bool) -> Void)
     func getPhotos(completion: @escaping ([PHAsset]) -> Void)
 }
 
 class PhotoService: PhotoServiceProtocol {
-//FIXME: - need to call it in presenter
-    func requestAuthorization(completion: @escaping (Bool) -> Void) {
+    func requestAuthorization() {
         PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
                 print("STATUS: \(status)")
                 if status == .denied || status == .restricted {
-                    completion(false)
                     //showAlert
-                    print("NOT OKAY")
+                    print("not allowed")
                 } else {
-                    print("OKAY")
-                    completion(true)
+                    print("allowed")
                 }
             }
         }
     }
 
     func getPhotos(completion: @escaping ([PHAsset]) -> Void) {
+        requestAuthorization()
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)

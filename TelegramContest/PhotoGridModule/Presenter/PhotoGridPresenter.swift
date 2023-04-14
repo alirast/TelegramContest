@@ -37,7 +37,6 @@ class PhotoGridPresenter: PhotoGridPresenterProtocol {
     }
     
     func getPhotos() {
-//TODO: - maybe here should be requestAuthorization from photoService?
         photoService.getPhotos { [weak self] assets in
             guard let self = self else { return }
             DispatchQueue.main.async {

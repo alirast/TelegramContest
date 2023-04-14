@@ -38,29 +38,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
             self.collectionView.reloadData()
         }
     }
-//MARK: - getPhotos
-    /*func getPhotos() {
-//FIXME: - first - accessed and then after else - denied
-        PHPhotoLibrary.requestAuthorization { [weak self] status in
-            print(status)
-            if status == .denied || status == .restricted {
-                DispatchQueue.main.async {
-                    self?.showAlert()
-                }
-            } else {
-                let assets = PHAsset.fetchAssets(with: .image, options: nil)
-                assets.enumerateObjects { (object, _, _) in
-                    print(object)
-                    //self?.imageArray.append(object)
-                }
-                //self?.imageArray.reverse()
-                //update ui on main thread
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
-            }
-        }
-    }*/
 //MARK: - showAlert
 //TODO: - should be in photoService + add handler (which one?)
     func showAlert() {
