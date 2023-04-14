@@ -12,7 +12,6 @@ import Photos
 
 class PhotoGridViewController: UIViewController, UICollectionViewDelegate, PhotoGridViewProtocol {
 //TODO: - convert PHAsset to UIIMage for drawing canvas
-//TODO: - presenter for PhotoGridViewController for router (for drawingVC)
     var presenter: PhotoGridPresenterProtocol!
     var imageArray = [PHAsset]()
     var collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
@@ -21,13 +20,12 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
     override func viewDidLoad() {
         super.viewDidLoad()
         createCollectionView()
-//FIXME: - we dont have presenter maybe need to fix in router
         presenter.getPhotos()
     }
 //MARK: - createCollectionView
     func createCollectionView() {
         //FIXME: - dont need background color if app mode is dark
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .orange
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -64,7 +62,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
         }
     }*/
 //MARK: - showAlert
-//TODO: - add handler (which one?)
+//TODO: - should be in photoService + add handler (which one?)
     func showAlert() {
         let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
@@ -80,8 +78,6 @@ extension PhotoGridViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         //get particular asset for particular index
-        //let asset = self.imageArray[indexPath.row]
-        //maybe item here
         guard let asset = presenter.pictures?[indexPath.row] else { return UICollectionViewCell() }
         //get image from the asset because asset is not an image yet
         //converting to UIImage
