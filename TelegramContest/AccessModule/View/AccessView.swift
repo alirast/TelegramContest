@@ -51,8 +51,6 @@ class AccessView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//FIXME: - not purple. need dark mode of application (info plist)
-        backgroundColor = .purple
         //initial state of titles
         accessLabel.text = "Access Your Photos"
         accessButton.setTitle("Allow Access", for: .normal)

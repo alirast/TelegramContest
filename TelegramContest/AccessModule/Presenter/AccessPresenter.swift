@@ -7,17 +7,6 @@
 
 import Foundation
 
-//protocol for view
-//if button pressed once - title changes forever
-protocol AccessViewProtocol: AnyObject {
-    func showNewTitles()
-}
-
-protocol AccessPresenterProtocol: AnyObject {
-    init(accessView: AccessViewProtocol, router: RouterProtocol)
-    func setAccessTitles()
-}
-
 class AccessPresenter: AccessPresenterProtocol {
     weak var accessView: AccessViewProtocol?
     //not weak reference

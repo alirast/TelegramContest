@@ -8,10 +8,6 @@
 import Foundation
 import Photos
 
- protocol PhotoServiceProtocol {
-    func getPhotos(completion: @escaping ([PHAsset]) -> Void)
-}
-
 class PhotoService: PhotoServiceProtocol {
     func requestAuthorization() {
         PHPhotoLibrary.requestAuthorization { status in

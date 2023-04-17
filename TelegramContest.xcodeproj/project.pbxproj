@@ -14,6 +14,8 @@
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
+		4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */; };
+		4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */; };
 		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
@@ -38,6 +40,8 @@
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModuleProtocols.swift; sourceTree = "<group>"; };
+		4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGirdModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		4F13BB7F29D5EBA400901944 /* PhotoGridModule */ = {
 			isa = PBXGroup;
 			children = (
+				4FA3C15529ED4B5D00CF75D5 /* Protocols */,
 				4F3C73E029E81BF400FCF6D1 /* ServiceLayer */,
 				4F0E19C429E71AC20042125A /* Presenter */,
 				4F0E19C329E71ABA0042125A /* View */,
@@ -110,6 +115,22 @@
 			path = PhotoService;
 			sourceTree = "<group>";
 		};
+		4FA3C15229ED4A8A00CF75D5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4FA3C15529ED4B5D00CF75D5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4FA72F2329D2063B00172B4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +150,7 @@
 		4FA72F2929D21B8400172B4B /* AccessModule */ = {
 			isa = PBXGroup;
 			children = (
+				4FA3C15229ED4A8A00CF75D5 /* Protocols */,
 				4FCEE4DD29CE1434000232C2 /* View */,
 				4FA72F2329D2063B00172B4B /* Model */,
 				4FA72F2629D2074C00172B4B /* Presenter */,
@@ -311,6 +333,8 @@
 				4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4F0E19C229E706E80042125A /* ToolView.swift in Sources */,
+				4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */,
+				4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */,
 				4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */,
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,

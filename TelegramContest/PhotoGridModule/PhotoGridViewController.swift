@@ -24,8 +24,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
     }
 //MARK: - createCollectionView
     func createCollectionView() {
-        //FIXME: - dont need background color if app mode is dark
-        collectionView.backgroundColor = .orange
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
