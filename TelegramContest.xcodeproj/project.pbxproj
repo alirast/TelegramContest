@@ -18,6 +18,7 @@
 		4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */; };
 		4FA3C15A29ED4D7700CF75D5 /* DrawingModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */; };
 		4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */; };
+		4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */; };
 		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
@@ -46,6 +47,7 @@
 		4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGirdModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
+		4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocols.swift; sourceTree = "<group>"; };
 		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		4FA3C16029ED537B00CF75D5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */,
+				4F13BB7B29D5E9BF00901944 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		4FA72F2329D2063B00172B4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +248,7 @@
 				4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */,
 				4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */,
 				4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */,
-				4F13BB7B29D5E9BF00901944 /* Router.swift */,
+				4FA3C16029ED537B00CF75D5 /* Router */,
 				4FC5C99929E02C6E009A351B /* DrawingModule */,
 				4F3C73E029E81BF400FCF6D1 /* ServiceLayer */,
 				4F13BB7F29D5EBA400901944 /* PhotoGridModule */,
@@ -344,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */,
 				4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */,
 				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
 				4FA3C15A29ED4D7700CF75D5 /* DrawingModuleProtocols.swift in Sources */,

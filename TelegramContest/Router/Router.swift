@@ -7,20 +7,6 @@
 
 import UIKit
 import Photos
-//TODO: - need navigation controller to go back to photoVC from drawingVC
-//requirements for all the classes
-protocol RouterMain {
-    var navigationController: UINavigationController? { get set }
-    var moduleBuilder: ModuleBuilderProtocol? { get set } //assembly
-}
-
-//for particular router
-protocol RouterProtocol: RouterMain {
-//FIXME: - back to access or to photoGrid?
-    func accessViewController()
-    func showPhotoGrid()
-    func showDrawingView(photo: PHAsset?)
-}
 
 class Router: RouterProtocol {
     var navigationController: UINavigationController?
