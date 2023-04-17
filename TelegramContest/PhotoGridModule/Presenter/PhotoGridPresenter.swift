@@ -33,6 +33,6 @@ class PhotoGridPresenter: PhotoGridPresenterProtocol {
     }
 
     func tapOnThePicture(picture: PHAsset?) {
-        
+        router?.showDrawingView(photo: picture)
     }
 }

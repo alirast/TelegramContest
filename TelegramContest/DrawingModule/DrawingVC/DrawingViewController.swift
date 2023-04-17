@@ -8,7 +8,7 @@
 import UIKit
 import PencilKit
 import Photos
-
+//TODO: - drawing should be in frame of picture
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
 
     
@@ -25,11 +25,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     override func viewDidLoad() {
         super.viewDidLoad()
 //TODO: - background should be an image (phasset)
-        canvasView.backgroundColor = .orange
+        canvasView.backgroundColor = .magenta
         canvasView.drawing = drawing
         canvasView.delegate = self
-        //view.addSubview(canvasView)
-        view.backgroundColor = .cyan
+        view.addSubview(canvasView)
+        //view.backgroundColor = .cyan
     }
     
     override func viewDidLayoutSubviews() {
