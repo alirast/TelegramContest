@@ -7,8 +7,12 @@
 
 import UIKit
 import PencilKit
+import Photos
 
-class DrawingViewController: UIViewController, PKCanvasViewDelegate {
+class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
+
+    
+    var presenter: DrawingPresenterProtocol!
     private let canvasView: PKCanvasView = {
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
@@ -40,5 +44,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate {
     
     func save(_ sender: Any) {
         //save ready image with drawing
+    }
+    
+    //protocol method
+    func setPhoto(photo: PHAsset?) {
+        
     }
 }

@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Photos
+
 protocol ModuleBuilderProtocol {
     func createAccessModule(router: RouterProtocol) -> UIViewController
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController
 //TODO: - give a picture from photoGridVC to drawingVC in parameters
-    func createDrawingModule(router: RouterProtocol) -> UIViewController
+    func createDrawingModule(photo: PHAsset?, router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: ModuleBuilderProtocol {
@@ -29,9 +31,12 @@ class ModuleBuilder: ModuleBuilderProtocol {
         return photoGridView
     }
 
-    func createDrawingModule(router: RouterProtocol) -> UIViewController {
+    func createDrawingModule(photo: PHAsset?, router: RouterProtocol) -> UIViewController {
 //TODO: - create presenter
         let drawingView = DrawingViewController()
+        let photoService = PhotoService()
+        let drawingPresenter = DrawingPresenter(view: drawingView, photoService: photoService, router: router, photo: photo)
+        drawingView.presenter = drawingPresenter
         return drawingView
     }
 
