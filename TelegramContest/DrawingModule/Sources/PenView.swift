@@ -14,40 +14,6 @@ protocol PenViewDelegate: AnyObject {
 }
 
 class PenView: UIView {
-    //initial code
- /*   weak var delegate: PenViewDelegate?
-    
-    var penContainerView = UIView()
-    
-    lazy var penBody: UIImageView = {
-        var penBodyView = UIImageView(image: UIImage(named: "pen"))
-        return penBodyView
-    }()
-    
-    lazy var penTip: UIImageView = {
-        var penTipView = UIImageView(image: UIImage(named: "penTip"))
-        penTipView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(penIsTapped)))
-        return penTipView
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        penContainerView.addSubview(penBody)
-        penContainerView.addSubview(penTip)
-        addSubview(penContainerView)
-        
-        NSLayoutConstraint.activate([
-            
-        ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func penIsTapped() {
-        
-    }*/
     
     let containerToolView: UIView = {
         let containerView = UIView()

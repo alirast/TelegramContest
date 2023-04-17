@@ -20,6 +20,7 @@
 		4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */; };
 		4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */; };
 		4FA3C16329ED54B900CF75D5 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */; };
+		4FA3C16B29ED812A00CF75D5 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C16A29ED812A00CF75D5 /* Tool.swift */; };
 		4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2429D2064F00172B4B /* AccessModel.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
@@ -31,7 +32,6 @@
 		4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4DE29CE14BF000232C2 /* AccessView.swift */; };
 		4FCEE4E229CE162D000232C2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4FCEE4E129CE162D000232C2 /* Lottie */; };
 		4FCEE4E429CE1713000232C2 /* duck.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEE4E329CE1713000232C2 /* duck.json */; };
-		4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */; };
 		4FF2E87029E48DFF002F9FF3 /* PenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E86F29E48DFF002F9FF3 /* PenView.swift */; };
 		4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +50,7 @@
 		4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
 		4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocols.swift; sourceTree = "<group>"; };
 		4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		4FA3C16A29ED812A00CF75D5 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		4FA72F2429D2064F00172B4B /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		4FCEE4D729CE0F60000232C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCEE4DE29CE14BF000232C2 /* AccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessView.swift; sourceTree = "<group>"; };
 		4FCEE4E329CE1713000232C2 /* duck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duck.json; sourceTree = "<group>"; };
-		4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		4FF2E86F29E48DFF002F9FF3 /* PenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenView.swift; sourceTree = "<group>"; };
 		4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				4FF2E86F29E48DFF002F9FF3 /* PenView.swift */,
-				4FF2E86D29E488D0002F9FF3 /* ToolsView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
+				4FA3C16A29ED812A00CF75D5 /* Tool.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,11 +377,11 @@
 				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
-				4FF2E86E29E488D0002F9FF3 /* ToolsView.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4F0E19C229E706E80042125A /* ToolView.swift in Sources */,
 				4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */,
 				4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */,
+				4FA3C16B29ED812A00CF75D5 /* Tool.swift in Sources */,
 				4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */,
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
