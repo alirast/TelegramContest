@@ -24,6 +24,11 @@ class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProt
         accessView.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        accessView.accessButton.shimmer()
+    }
+    
     //method from delegate (access view)
     //button tapped
     //from view controller to presenter

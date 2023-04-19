@@ -12,6 +12,7 @@ import Photos
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
     
     //navigation buttons
+//TODO: - separate buttons to view
     let undoNavigationBarImage = UIImage(named: "undo")?.withRenderingMode(.alwaysTemplate)
     let clearNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
 

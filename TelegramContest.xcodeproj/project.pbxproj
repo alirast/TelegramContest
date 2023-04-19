@@ -13,6 +13,7 @@
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
+		4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */; };
 		4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */; };
 		4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */; };
 		4FA3C15A29ED4D7700CF75D5 /* DrawingModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */; };
@@ -42,6 +43,7 @@
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerButton.swift; sourceTree = "<group>"; };
 		4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGirdModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModuleProtocols.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = PhotoService;
 			sourceTree = "<group>";
 		};
+		4F48BB1F29EEFD64003A4F96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4FA3C15229ED4A8A00CF75D5 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		4FA72F2929D21B8400172B4B /* AccessModule */ = {
 			isa = PBXGroup;
 			children = (
+				4F48BB1F29EEFD64003A4F96 /* Extensions */,
 				4FA3C15229ED4A8A00CF75D5 /* Protocols */,
 				4FCEE4DD29CE1434000232C2 /* View */,
 				4FA72F2329D2063B00172B4B /* Model */,
@@ -363,6 +374,7 @@
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
 				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
+				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4FA72F2529D2064F00172B4B /* AccessModel.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
