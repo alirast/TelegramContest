@@ -8,6 +8,7 @@
 import UIKit
 import PencilKit
 import Photos
+
 //TODO: - drawing should be in frame of picture
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
     
@@ -26,6 +27,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     //drawing object to store drawing
     let drawing = PKDrawing()
     
+    //to store the image
+    let imageForDrawing = UIImageView()
+//MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,17 +41,17 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         view.addSubview(canvasView)
         //view.backgroundColor = .cyan
     }
-    
+//MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         canvasView.frame = view.bounds
     }
-    
+//MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //our toolPicker - not system
     }
-    
+//MARK: - methods
     func save(_ sender: Any) {
         //save ready image with drawing
     }

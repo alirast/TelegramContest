@@ -15,6 +15,7 @@ protocol AccessViewDelegate: AnyObject {
 
 class AccessView: UIView {
     weak var delegate: AccessViewDelegate?
+    
     lazy var duckView: LottieAnimationView = {
         var view = LottieAnimationView()
         view = .init(name: "duck")
@@ -26,7 +27,7 @@ class AccessView: UIView {
         view.play()
         return view
     }()
-//FIXME: - shimmer animation for button
+
     lazy var accessButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -60,8 +61,7 @@ class AccessView: UIView {
         
         
         NSLayoutConstraint.activate([
-//FIXME: - should not be equal to number
-            duckView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+            duckView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: UIScreen.main.bounds.height * 0.2),
             duckView.centerXAnchor.constraint(equalTo: centerXAnchor),
             duckView.widthAnchor.constraint(equalToConstant: 150),
             duckView.heightAnchor.constraint(equalToConstant: 150),

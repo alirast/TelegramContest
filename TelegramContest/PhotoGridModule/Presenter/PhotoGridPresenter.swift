@@ -5,8 +5,8 @@
 //  Created by N S on 12.04.2023.
 //
 
-import Foundation
 import Photos
+import UIKit
 
 class PhotoGridPresenter: PhotoGridPresenterProtocol {
     //link to view
@@ -34,5 +34,6 @@ class PhotoGridPresenter: PhotoGridPresenterProtocol {
 
     func tapOnThePicture(picture: PHAsset?) {
         router?.showDrawingView(photo: picture)
+      
     }
 }
