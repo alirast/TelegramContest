@@ -9,7 +9,6 @@ import UIKit
 import PencilKit
 import Photos
 
-//TODO: - drawing should be in frame of picture
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
     
     //navigation buttons
@@ -29,21 +28,32 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     //to store the image
     let imageForDrawing = UIImageView()
+    //to store drawing and image together
+    let containerView = UIView()
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initialSetupNavigationBar()
+        view.backgroundColor = .darkGray
+        
+        containerView.backgroundColor = .blue
+        view.addSubview(containerView)
+        
 //TODO: - background should be an image (phasset)
+        imageForDrawing.backgroundColor = .green
+        containerView.addSubview(imageForDrawing)
+
         canvasView.backgroundColor = .magenta
         canvasView.drawing = drawing
         canvasView.delegate = self
-        view.addSubview(canvasView)
-        //view.backgroundColor = .cyan
+        containerView.addSubview(canvasView)
+        
     }
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        containerView.frame = view.bounds
+        imageForDrawing.frame = view.bounds
         canvasView.frame = view.bounds
     }
 //MARK: - viewDidAppear

@@ -12,7 +12,6 @@ class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProt
     var accessView = AccessView()
     //link to presenter
     var presenter: AccessPresenterProtocol!
-    //lazy var presenter = AccessPresenter()
 
     override func loadView() {
         //changing system view to our custom access view

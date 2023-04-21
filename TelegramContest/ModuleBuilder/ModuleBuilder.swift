@@ -25,7 +25,6 @@ class ModuleBuilder: ModuleBuilderProtocol {
     }
 
     func createDrawingModule(photo: PHAsset?, router: RouterProtocol) -> UIViewController {
-//TODO: - create presenter
         let drawingView = DrawingViewController()
         let photoService = PhotoService()
         let drawingPresenter = DrawingPresenter(view: drawingView, photoService: photoService, router: router, photo: photo)
