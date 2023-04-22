@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProtocol {
+final class AccessViewController: UIViewController, AccessViewDelegate, AccessViewProtocol {
     //link to view with layout
-    var accessView = AccessView()
+    private var accessView = AccessView()
     //link to presenter
     var presenter: AccessPresenterProtocol!
 

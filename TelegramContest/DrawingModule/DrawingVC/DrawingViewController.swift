@@ -30,6 +30,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let imageForDrawing = UIImageView()
     //to store drawing and image together
     let containerView = UIView()
+    //tool for trying
+    let pen = Tool(toolBody: "pen", toolTip: "penTip")
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.drawing = drawing
         canvasView.delegate = self
         containerView.addSubview(canvasView)
+        
+        //tool
+        canvasView.addSubview(pen)
+        setupPenConstraints()
         
     }
 //MARK: - viewDidLayoutSubviews
@@ -88,6 +94,16 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         navigationItem.hidesBackButton = true
         clearNavigationBarButton.tintColor = .white
         navigationItem.rightBarButtonItem = clearNavigationBarButton
+    }
+//FIXME: - not one tool but stack of them
+    func setupPenConstraints() {
+        pen.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            pen.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            pen.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
+            pen.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.9)
+        ])
     }
     
     

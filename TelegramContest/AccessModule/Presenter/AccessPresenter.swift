@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccessPresenter: AccessPresenterProtocol {
+final class AccessPresenter: AccessPresenterProtocol {
     weak var accessView: AccessViewProtocol?
     //not weak reference
     var router: RouterProtocol?

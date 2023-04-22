@@ -13,7 +13,7 @@ protocol AccessViewDelegate: AnyObject {
 }
 
 
-class AccessView: UIView {
+final class AccessView: UIView {
     weak var delegate: AccessViewDelegate?
     
     lazy var duckView: LottieAnimationView = {
