@@ -12,6 +12,8 @@
 		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
+		4F14D85729F57AFE00F16CC2 /* MainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */; };
+		4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
 		4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */; };
 		4F577E2729F448C100ADF032 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F577E2629F448C100ADF032 /* Tool.swift */; };
@@ -40,6 +42,8 @@
 		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditorView.swift; sourceTree = "<group>"; };
+		4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentedControl.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerButton.swift; sourceTree = "<group>"; };
 		4F577E2629F448C100ADF032 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		4F0E19C329E71ABA0042125A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */,
+				4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,8 +103,6 @@
 				4FA3C15529ED4B5D00CF75D5 /* Protocols */,
 				4F0E19C429E71AC20042125A /* Presenter */,
 				4F0E19C329E71ABA0042125A /* View */,
-				4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */,
-				4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */,
 			);
 			path = PhotoGridModule;
 			sourceTree = "<group>";
@@ -212,6 +216,8 @@
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
 				4F577E2629F448C100ADF032 /* Tool.swift */,
+				4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */,
+				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F14D85729F57AFE00F16CC2 /* MainEditorView.swift in Sources */,
 				4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */,
 				4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */,
 				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
@@ -357,6 +364,7 @@
 				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
+				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */,
 				4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */,
