@@ -15,6 +15,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //TODO: - separate buttons to view
     let undoNavigationBarImage = UIImage(named: "undo")?.withRenderingMode(.alwaysTemplate)
     let clearNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
+    
+    let mainEditorView = MainEditorView()
 
     var presenter: DrawingPresenterProtocol!
     private let canvasView: PKCanvasView = {
@@ -36,6 +38,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetupNavigationBar()
+        mainEditorView.translatesAutoresizingMaskIntoConstraints = false
+//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity
+        view.addSubview(mainEditorView)
+        initialSetupMainEditorView()
+        
         view.backgroundColor = .darkGray
         
         containerView.backgroundColor = .blue
@@ -51,6 +58,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         containerView.addSubview(canvasView)
         
         //tool
+//FIXME: - should be toolsView
         canvasView.addSubview(pen)
         setupPenConstraints()
         
@@ -95,6 +103,16 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         clearNavigationBarButton.tintColor = .white
         navigationItem.rightBarButtonItem = clearNavigationBarButton
     }
+    
+    func initialSetupMainEditorView() {
+        NSLayoutConstraint.activate([
+            mainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mainEditorView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
+        ])
+    }
+    
 //FIXME: - not one tool but stack of them
     func setupPenConstraints() {
         pen.translatesAutoresizingMaskIntoConstraints = false
