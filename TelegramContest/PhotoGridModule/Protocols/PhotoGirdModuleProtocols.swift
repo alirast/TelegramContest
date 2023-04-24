@@ -21,8 +21,3 @@ protocol PhotoGridPresenterProtocol: AnyObject {
 //TODO: - give picture from didSelect to drawingVC
     func tapOnThePicture(picture: PHAsset?)
 }
-
-//photoService protocol
-protocol PhotoServiceProtocol {
-    func getPhotos(completion: @escaping ([PHAsset]) -> Void)
-}
