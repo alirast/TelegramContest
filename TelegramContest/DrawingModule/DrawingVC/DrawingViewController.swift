@@ -37,6 +37,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.setPhoto()
         initialSetupNavigationBar()
         mainEditorView.translatesAutoresizingMaskIntoConstraints = false
 //FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity
@@ -82,7 +83,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     //protocol method
     func setPhoto(photo: PHAsset?) {
-        
+        photo?.convertToImage(completion: { image in
+            if let image = image {
+                self.imageForDrawing.image = image
+            }
+        })
+        //imageForDrawing.image = photo
     }
     
     func initialSetupNavigationBar() {

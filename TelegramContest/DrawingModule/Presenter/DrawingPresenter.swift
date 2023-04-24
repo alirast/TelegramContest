@@ -23,6 +23,6 @@ class DrawingPresenter: DrawingPresenterProtocol {
     }
     
     func setPhoto() {
-        
+        self.drawingView?.setPhoto(photo: photo)
     }
 }
