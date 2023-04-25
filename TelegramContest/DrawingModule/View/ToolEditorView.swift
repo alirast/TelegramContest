@@ -17,6 +17,16 @@ class ToolEditorView: UIView {
         return button
     }()
     
+    //add image and title - mb view not button
+    lazy var toolTipButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Round", for: .normal)
+        button.titleLabel?.textAlignment = .left //?
+        button.titleLabel?.font = .systemFont(ofSize: 20)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backButton)
