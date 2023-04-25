@@ -32,6 +32,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let imageForDrawing = UIImageView()
     //to store drawing and image together
     let containerView = UIView()
+    //gradient view
+    let gradientView = GradientLayerView()
     //tool for trying
     let pen = Tool(toolBody: "pen", toolTip: "penTip")
 //MARK: - viewDidLoad
@@ -49,6 +51,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         containerView.backgroundColor = .blue
         view.addSubview(containerView)
         
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gradientView)
+        setupGradientView()
+        
 //TODO: - background should be an image (phasset)
         imageForDrawing.backgroundColor = .green
         containerView.addSubview(imageForDrawing)
@@ -57,6 +63,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.drawing = drawing
         canvasView.delegate = self
         containerView.addSubview(canvasView)
+        
+        
         
         //tool
 //FIXME: - should be toolsView
@@ -91,7 +99,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         //imageForDrawing.image = photo
     }
     
-    func initialSetupNavigationBar() {
+    private func initialSetupNavigationBar() {
         //color for navigation bar and safe
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -110,7 +118,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         navigationItem.rightBarButtonItem = clearNavigationBarButton
     }
     
-    func initialSetupMainEditorView() {
+    private func initialSetupMainEditorView() {
         NSLayoutConstraint.activate([
             mainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -120,7 +128,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
 //FIXME: - not one tool but stack of them
-    func setupPenConstraints() {
+    private func setupPenConstraints() {
         pen.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -131,4 +139,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     
+    private func setupGradientView() {
+        NSLayoutConstraint.activate([
+            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            gradientView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
+        ])
+    }
 }

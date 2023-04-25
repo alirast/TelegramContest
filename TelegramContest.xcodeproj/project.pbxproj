@@ -19,6 +19,7 @@
 		4F577E2729F448C100ADF032 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F577E2629F448C100ADF032 /* Tool.swift */; };
 		4F5C380929F6E355000BB670 /* PhotoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */; };
 		4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */; };
+		4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */; };
 		4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */; };
 		4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */; };
 		4FA3C15A29ED4D7700CF75D5 /* DrawingModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */; };
@@ -51,6 +52,7 @@
 		4F577E2629F448C100ADF032 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceProtocol.swift; sourceTree = "<group>"; };
 		4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
+		4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerView.swift; sourceTree = "<group>"; };
 		4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15629ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGirdModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModuleProtocols.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				4F577E2629F448C100ADF032 /* Tool.swift */,
 				4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */,
 				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
+				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
+				4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */,
