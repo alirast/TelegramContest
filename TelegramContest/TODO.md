@@ -3,4 +3,3 @@ userDefaults for accessButton title
 containerView.frame in DrawingVC should be = imageForDrawing.image.frame (fix it in viewDidLayoutSubviews)
 levels of access for classes
 fix frame or constraints for tools on drawingVC
-gradient layer under MainEditorView as separate view
