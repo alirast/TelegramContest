@@ -17,19 +17,29 @@ class ToolEditorView: UIView {
         return button
     }()
     
-    //add image and title - mb view not button
+   
     lazy var toolTipButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Round", for: .normal)
-        button.titleLabel?.textAlignment = .left //?
-        button.titleLabel?.font = .systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        button.setImage(UIImage(named: "roundTip"), for: .normal)
+        button.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+        button.semanticContentAttribute = .forceRightToLeft
         return button
+    }()
+    
+    lazy var toolWidthSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        
+        return slider
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backButton)
+        addSubview(toolTipButton)
         
         setupToolEditorElements()
     }
