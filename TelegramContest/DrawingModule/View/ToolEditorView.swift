@@ -7,25 +7,13 @@
 
 import UIKit
 
-//add to vc when choose a tool
+//add to vc when choose a tool - should be our custom slider + constraints
 class ToolEditorView: UIView {
     lazy var backButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white //always
-        return button
-    }()
-    
-   
-    lazy var toolTipButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Round", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        button.setImage(UIImage(named: "roundTip"), for: .normal)
-        button.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        button.semanticContentAttribute = .forceRightToLeft
         return button
     }()
     
@@ -39,7 +27,6 @@ class ToolEditorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backButton)
-        addSubview(toolTipButton)
         
         setupToolEditorElements()
     }
