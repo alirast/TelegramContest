@@ -40,11 +40,13 @@ class WeightSliderView: UIView {
             sliderImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             sliderImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             sliderImage.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            sliderImage.bottomAnchor.constraint(equalTo: slider.topAnchor),
             
             slider.topAnchor.constraint(equalTo: topAnchor),
-            slider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            slider.leadingAnchor.constraint(equalTo: leadingAnchor),
             slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            slider.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
+            slider.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            slider.widthAnchor.constraint(equalTo: sliderImage.widthAnchor)
         ])
     }
     
