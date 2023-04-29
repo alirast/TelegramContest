@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */; };
-		4F0DF0DC29FC04DE001E0919 /* WeightSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DF0DB29FC04DE001E0919 /* WeightSliderView.swift */; };
 		4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */; };
 		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
@@ -17,6 +16,7 @@
 		4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
 		4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */; };
+		4F4A571629FD837C00B7347B /* WeightSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A571529FD837C00B7347B /* WeightSlider.swift */; };
 		4F577E2729F448C100ADF032 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F577E2629F448C100ADF032 /* Tool.swift */; };
 		4F5C380929F6E355000BB670 /* PhotoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */; };
 		4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */; };
@@ -43,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		4F0DF0DB29FC04DE001E0919 /* WeightSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSliderView.swift; sourceTree = "<group>"; };
 		4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPresenter.swift; sourceTree = "<group>"; };
 		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentedControl.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerButton.swift; sourceTree = "<group>"; };
+		4F4A571529FD837C00B7347B /* WeightSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSlider.swift; sourceTree = "<group>"; };
 		4F577E2629F448C100ADF032 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceProtocol.swift; sourceTree = "<group>"; };
 		4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
 				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
-				4F0DF0DB29FC04DE001E0919 /* WeightSliderView.swift */,
+				4F4A571529FD837C00B7347B /* WeightSlider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,12 +394,12 @@
 				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
 				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
-				4F0DF0DC29FC04DE001E0919 /* WeightSliderView.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
 				4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */,
 				4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
+				4F4A571629FD837C00B7347B /* WeightSlider.swift in Sources */,
 				4FA3C15729ED4B7700CF75D5 /* PhotoGirdModuleProtocols.swift in Sources */,
 				4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */,
 				4F577E2729F448C100ADF032 /* Tool.swift in Sources */,

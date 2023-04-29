@@ -17,16 +17,20 @@ class ToolEditorView: UIView {
         return button
     }()
     
-    lazy var toolWidthSlider: UISlider = {
-        let slider = UISlider()
+    lazy var toolWidthSlider: WeightSlider = {
+        let slider = WeightSlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        
+        slider.minimumTrackTintColor = .white
+        slider.maximumTrackTintColor = .darkGray
+        slider.minimumValue = 0
+        slider.maximumValue = 10
         return slider
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backButton)
+        addSubview(toolWidthSlider)
         
         setupToolEditorElements()
     }
@@ -36,7 +40,11 @@ class ToolEditorView: UIView {
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             backButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
-            backButton.heightAnchor.constraint(equalTo: backButton.widthAnchor)
+            backButton.heightAnchor.constraint(equalTo: backButton.widthAnchor),
+            
+            toolWidthSlider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -17),
+            toolWidthSlider.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 15),
+            toolWidthSlider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
     }
     

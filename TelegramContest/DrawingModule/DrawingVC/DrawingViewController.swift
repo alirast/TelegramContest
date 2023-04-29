@@ -17,8 +17,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let clearNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
     
     let mainEditorView = MainEditorView()
+    let toolEditorView = ToolEditorView() //when a tool is chosen - didnt add to subview now and didnt call the function for the setup
 
     var presenter: DrawingPresenterProtocol!
+    
     private let canvasView: PKCanvasView = {
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
@@ -40,10 +42,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setPhoto()
+        
         initialSetupNavigationBar()
-        mainEditorView.translatesAutoresizingMaskIntoConstraints = false
-//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity
-        view.addSubview(mainEditorView)
+
         initialSetupMainEditorView()
         
         view.backgroundColor = .darkGray
@@ -51,8 +52,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         containerView.backgroundColor = .blue
         view.addSubview(containerView)
         
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gradientView)
         setupGradientView()
         
 //TODO: - background should be an image (phasset)
@@ -119,11 +118,24 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func initialSetupMainEditorView() {
+//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity
+        mainEditorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mainEditorView)
         NSLayoutConstraint.activate([
             mainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mainEditorView.topAnchor.constraint(equalTo: view.topAnchor),
             mainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
+        ])
+    }
+    
+    private func setupToolEditorView() {
+        toolEditorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            toolEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            toolEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            toolEditorView.topAnchor.constraint(equalTo: view.topAnchor),
+            toolEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
     
@@ -140,6 +152,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     
     private func setupGradientView() {
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gradientView)
         NSLayoutConstraint.activate([
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
