@@ -35,12 +35,32 @@ class MainEditorView: UIView {
         return button
     }()
     
+    lazy var colorWheel: UIColorWell = {
+        let colorWheel = UIColorWell()
+        colorWheel.translatesAutoresizingMaskIntoConstraints = false
+        colorWheel.title = "Colors"
+        return colorWheel
+    }()
+    
+    lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "add")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 20
+        //let interaction = UIContextMenuInteraction(delegate: self)
+        //button.addInteraction(interaction)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(drawOrTextSegmentedControl)
         addSubview(downloadButton)
         addSubview(cancelAndBackButton)
+        addSubview(colorWheel)
+        addSubview(addButton)
         
         setupMainEditorElements()
     }
@@ -60,7 +80,17 @@ class MainEditorView: UIView {
             downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             downloadButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             downloadButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
-            downloadButton.heightAnchor.constraint(equalTo: downloadButton.widthAnchor)
+            downloadButton.heightAnchor.constraint(equalTo: downloadButton.widthAnchor),
+            
+            colorWheel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            colorWheel.bottomAnchor.constraint(equalTo: cancelAndBackButton.topAnchor, constant: -5),
+            colorWheel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
+            colorWheel.heightAnchor.constraint(equalTo: colorWheel.widthAnchor),
+            
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -5),
+            addButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
+            addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])
     }
     
