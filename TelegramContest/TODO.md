@@ -5,10 +5,9 @@ levels of access for classes
 fix frame or constraints for tools on drawingVC
 
 for mainEditorView need tools view 
-for mainEditorView need color choice and plusButton (should be removed for toolEditorView)
 
 for toolEditorView need toolView
 
-for plusButton need contextView with rectangle, ellipse, bubble, star and arrow buttons (dark theme)
+add dark theme for plusButton
 
 nextStep  - text view

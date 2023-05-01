@@ -7,7 +7,10 @@
 
 import UIKit
 
-class MainEditorView: UIView {
+class MainEditorView: UIView, ContextMenuViewDelegate {
+    
+    var contextMenu = ContextMenuView()
+    
     lazy var drawOrTextSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Draw", "Text"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -49,8 +52,8 @@ class MainEditorView: UIView {
         button.tintColor = .white
         button.backgroundColor = .black
         button.layer.cornerRadius = 20
-        //let interaction = UIContextMenuInteraction(delegate: self)
-        //button.addInteraction(interaction)
+        button.menu = contextMenu.menu
+        button.showsMenuAsPrimaryAction = true
         return button
     }()
     
