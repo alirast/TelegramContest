@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//add color and width
+
 final class Tool: UIView {
     private let toolBodyImage = UIImageView()
     private let toolTipImage = UIImageView()

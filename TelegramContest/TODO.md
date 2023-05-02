@@ -4,7 +4,7 @@ containerView.frame in DrawingVC should be = imageForDrawing.image.frame (fix it
 levels of access for classes
 fix frame or constraints for tools on drawingVC
 
-for mainEditorView need tools view 
+canvasView should be bottomAnchor of toolsView.topAnchor
 
 for toolEditorView need toolView
 
