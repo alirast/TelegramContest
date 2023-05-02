@@ -11,10 +11,10 @@ final class Tool: UIView {
     private let toolBodyImage = UIImageView()
     private let toolTipImage = UIImageView()
     
-    init(toolBody: String, toolTip: String) {
+    init(toolBody: String, toolTip: String?) {
         super.init(frame: .zero)
         toolBodyImage.image = UIImage(named: toolBody)
-        toolTipImage.image = UIImage(named: toolTip)
+        toolTipImage.image = UIImage(named: toolTip ?? "")
         
         addSubview(toolBodyImage)
         addSubview(toolTipImage)
@@ -26,6 +26,9 @@ final class Tool: UIView {
     }
     
     private func setupTool() {
+        toolBodyImage.contentMode = .scaleAspectFit
+        toolTipImage.contentMode = .scaleAspectFit
+        
         NSLayoutConstraint.activate([
             toolBodyImage.topAnchor.constraint(equalTo: topAnchor),
             toolBodyImage.centerXAnchor.constraint(equalTo: centerXAnchor),
