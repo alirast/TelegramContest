@@ -16,10 +16,20 @@ final class AccessPresenter: AccessPresenterProtocol {
         self.router = router
     }
     
-    //from presenter to view controller
-    func setAccessTitles() {
-        //from access module presenter to router showGrid
+    let defaults = UserDefaults.standard
+    
+    func saveNewTitles(_ newButtonTitle: String, _ newLabelTitle: String) {
         router?.showPhotoGrid()
-        accessView?.showNewTitles()
+        defaults.set(newButtonTitle, forKey: "newButtonTitle")
+        defaults.set(newLabelTitle, forKey: "newLabelTitle")
+        defaults.synchronize()
+    }
+    
+    func getSavedButtonTitle() -> String? {
+        return defaults.string(forKey: "newButtonTitle")
+    }
+    
+    func getSavedLabelTitle() -> String? {
+        return defaults.string(forKey: "newLabelTitle")
     }
 }

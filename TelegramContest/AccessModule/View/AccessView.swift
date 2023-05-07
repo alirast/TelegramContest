@@ -52,9 +52,6 @@ final class AccessView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //initial state of titles
-        accessLabel.text = "Access Your Photos"
-        accessButton.setTitle("Allow Access", for: .normal)
         addSubview(accessLabel)
         addSubview(accessButton)
         addSubview(duckView)
@@ -83,7 +80,6 @@ final class AccessView: UIView {
     }
     
     @objc func didPressAccessButton() {
-//FIXME: - save settings for titles if access allowed
         //from view to view controller
         delegate?.didAllowAccess()
     }

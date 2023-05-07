@@ -8,13 +8,15 @@
 import Foundation
 
 //protocol for view
-//if button pressed once - title changes forever
 protocol AccessViewProtocol: AnyObject {
-    func showNewTitles()
+    
 }
 
 //protocol for presenter itself
 protocol AccessPresenterProtocol: AnyObject {
     init(accessView: AccessViewProtocol, router: RouterProtocol)
-    func setAccessTitles()
+    
+    func saveNewTitles(_ newButtonTitle: String, _ newLabelTitle: String)
+    func getSavedButtonTitle() -> String?
+    func getSavedLabelTitle() -> String?
 }

@@ -21,6 +21,14 @@ final class AccessViewController: UIViewController, AccessViewDelegate, AccessVi
     override func viewDidLoad() {
         super.viewDidLoad()
         accessView.delegate = self
+        
+        if let newButtonTitle = presenter.getSavedButtonTitle(), let newLabelTitle = presenter.getSavedLabelTitle() {
+            accessView.accessButton.setTitle(newButtonTitle, for: .normal)
+            accessView.accessLabel.text = newLabelTitle
+        } else {
+            accessView.accessButton.setTitle("Allow Access", for: .normal)
+            accessView.accessLabel.text = "Access Your Photos"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,14 +40,9 @@ final class AccessViewController: UIViewController, AccessViewDelegate, AccessVi
     //button tapped
     //from view controller to presenter
     func didAllowAccess() {
-        presenter.setAccessTitles()
-    }
-    
-    //from presenter to view controller
-    func showNewTitles() {
-        accessView.accessLabel.text = "Edit My Photos"
+        presenter.saveNewTitles("Let's go", "Edit My Photos")
         accessView.accessButton.setTitle("Let's go", for: .normal)
-        
+        accessView.accessLabel.text = "Edit My Photos"
     }
 }
 
