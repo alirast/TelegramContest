@@ -14,6 +14,7 @@
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
 		4F14D85729F57AFE00F16CC2 /* MainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */; };
 		4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */; };
+		4F3768E62A09575300246824 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3768E52A09575300246824 /* TextView.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
 		4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */; };
 		4F4A571629FD837C00B7347B /* WeightSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A571529FD837C00B7347B /* WeightSlider.swift */; };
@@ -50,6 +51,7 @@
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditorView.swift; sourceTree = "<group>"; };
 		4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentedControl.swift; sourceTree = "<group>"; };
+		4F3768E52A09575300246824 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		4F48BB2029EEFD73003A4F96 /* ShimmerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerButton.swift; sourceTree = "<group>"; };
 		4F4A571529FD837C00B7347B /* WeightSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSlider.swift; sourceTree = "<group>"; };
@@ -117,6 +119,22 @@
 				4F0E19C329E71ABA0042125A /* View */,
 			);
 			path = PhotoGridModule;
+			sourceTree = "<group>";
+		};
+		4F3768E32A09572C00246824 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				4F3768E42A09573500246824 /* View */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		4F3768E42A09573500246824 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F3768E52A09575300246824 /* TextView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4F3C73E029E81BF400FCF6D1 /* ServiceLayer */ = {
@@ -238,6 +256,7 @@
 				4FA3C15829ED4D5D00CF75D5 /* Protocols */,
 				4FF2E87129E494CD002F9FF3 /* DrawingVC */,
 				4FC5C99A29E02C89009A351B /* View */,
+				4F3768E32A09572C00246824 /* Text */,
 			);
 			path = DrawingModule;
 			sourceTree = "<group>";
@@ -395,6 +414,7 @@
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
 				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
+				4F3768E62A09575300246824 /* TextView.swift in Sources */,
 				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4F94DE5D29FFFECF00E30266 /* ContextMenuProtocol.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,

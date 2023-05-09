@@ -17,7 +17,7 @@ protocol RouterMainProtocol {
 
 protocol RouterProtocol: RouterMainProtocol {
 //TODO: - back to access or to photoGrid
-    func accessViewController()
+    func showAccessViewController()
     func showPhotoGrid()
     func showDrawingView(photo: PHAsset?)
 }

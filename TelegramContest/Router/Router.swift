@@ -17,7 +17,7 @@ class Router: RouterProtocol {
         self.moduleBuilder = moduleBuilder
     }
     
-    func accessViewController() {
+    func showAccessViewController() {
         if let navigationController = navigationController {
             guard let accessViewController = moduleBuilder?.createAccessModule(router: self) else { return }
 //FIXME: - remove the accessViewController from the stack. Create stack from photoGridVC. because don't need back button on photoGridVC

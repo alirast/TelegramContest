@@ -18,6 +18,8 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         segmentedControl.backgroundColor = UIColor(red: 0.098, green: 0.098, blue: 0.098, alpha: 1.0)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)], for: .normal)
         segmentedControl.selectedSegmentTintColor = .gray
+        
+        segmentedControl.addTarget(self, action: #selector(switchDrawText), for: .touchUpInside)
         return segmentedControl
     }()
   
@@ -95,6 +97,17 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
             addButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])
+    }
+    
+    @objc func switchDrawText(_ segmentedControl: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            print("drawing segment")
+        case 1:
+            print("text segment")
+        default:
+            break
+        }
     }
     
     required init?(coder: NSCoder) {

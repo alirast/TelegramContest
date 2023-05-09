@@ -112,13 +112,15 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         if let undoButtonImage = undoNavigationBarImage, let cgImage = undoButtonImage.cgImage {
             let undoButtonScaledImage = UIImage(cgImage: cgImage, scale: 2.0, orientation: undoButtonImage.imageOrientation)
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: undoButtonScaledImage, style: .plain, target: nil, action: nil)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: undoButtonScaledImage, style: .plain, target: self, action: #selector(undoTapped))
             navigationItem.leftBarButtonItem?.tintColor = .lightGray
         }
         
         navigationItem.hidesBackButton = true
         clearNavigationBarButton.tintColor = .white
         navigationItem.rightBarButtonItem = clearNavigationBarButton
+        navigationItem.rightBarButtonItem?.target = self
+        navigationItem.rightBarButtonItem?.action = #selector(clearAll)
     }
     
     private func initialSetupMainEditorView() {
@@ -194,5 +196,16 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             gradientView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
         ])
+    }
+    
+    @objc private func undoTapped() {
+        print("undo tapped")
+        //go back to second screen through presrnter
+        presenter.undoAction()
+    }
+    
+    @objc private func clearAll() {
+        print("clear all")
+        canvasView.drawing = PKDrawing()
     }
 }

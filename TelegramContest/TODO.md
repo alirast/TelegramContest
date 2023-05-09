@@ -1,5 +1,5 @@
-when allowed access to pictures - reload data without going back to the first screen
-navigation: from 2nd screen to 1st screen, from 3rd screen to 2nd screen
+!when allowed access to pictures - reload data without going back to the first screen
++navigation: from 2nd screen to 1st screen, from 3rd screen to 2nd screen (no need to remove from subview cause of navigation)
 3rdVC canvasView + photoView
 containerView.frame in DrawingVC should be = imageForDrawing.image.frame (fix it in viewDidLayoutSubviews)
 levels of access for classes

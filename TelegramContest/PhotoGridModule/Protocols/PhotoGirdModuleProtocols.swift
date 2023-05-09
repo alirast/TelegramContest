@@ -18,6 +18,5 @@ protocol PhotoGridPresenterProtocol: AnyObject {
     var pictures: [PHAsset]? { get set }
     init(photoGridView: PhotoGridViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol)
     func getPhotos()
-//TODO: - give picture from didSelect to drawingVC
     func tapOnThePicture(picture: PHAsset?)
 }
