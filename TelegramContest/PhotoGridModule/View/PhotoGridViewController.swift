@@ -38,11 +38,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
     }
 //MARK: - showAlert
 //TODO: - should be in photoService + add handler (which one?)
-    func showAlert() {
-        let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alertController, animated: true)
-    }
+    
 }
 //MARK: - extensionDataSource
 extension PhotoGridViewController: UICollectionViewDataSource {

@@ -5,7 +5,7 @@
 //  Created by N S on 13.04.2023.
 //
 
-import Foundation
+import UIKit
 import Photos
 
 class PhotoService: PhotoServiceProtocol {
@@ -14,8 +14,8 @@ class PhotoService: PhotoServiceProtocol {
             DispatchQueue.main.async {
                 print("STATUS: \(status)")
                 if status == .denied || status == .restricted {
-                    //showAlert
                     print("not allowed")
+                    self.showAlert()
                 } else {
                     print("allowed")
                 }
@@ -36,5 +36,12 @@ class PhotoService: PhotoServiceProtocol {
         DispatchQueue.main.async {
             completion(assetArray)
         }
+    }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
+//FIXME: - go to settings of the app in phone settings
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true)
     }
 }
