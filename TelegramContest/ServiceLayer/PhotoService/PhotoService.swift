@@ -37,7 +37,7 @@ class PhotoService: PhotoServiceProtocol {
             completion(assetArray)
         }
     }
-    
+//FIXME: - should not be UI code here. move it to presenter at least? 
     func showAlert() {
         let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
 //FIXME: - go to settings of the app in phone settings

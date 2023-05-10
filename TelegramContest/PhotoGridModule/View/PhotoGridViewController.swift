@@ -22,6 +22,11 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
         createCollectionView()
         presenter.getPhotos()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //collectionView.reloadData()
+    }
 //MARK: - createCollectionView
     func createCollectionView() {
         collectionView.dataSource = self
@@ -36,8 +41,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
             self.collectionView.reloadData()
         }
     }
-//MARK: - showAlert
-//TODO: - should be in photoService + add handler (which one?)
     
 }
 //MARK: - extensionDataSource
