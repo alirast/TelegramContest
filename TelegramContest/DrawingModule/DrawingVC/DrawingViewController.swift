@@ -42,6 +42,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
     let brush = Tool(toolBody: "brush", toolTip: "brushTip")
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
+//MARK: - textView
+    private var textViewContainer = TextView()
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,5 +209,24 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     @objc private func clearAll() {
         print("clear all")
         canvasView.drawing = PKDrawing()
+    }
+    
+//MARK: - textViewMethods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textViewContainer.textView.resignFirstResponder()
+    }
+    
+    //call when switch to index 1 on the segmented control
+    private func setupTextView() {
+        textViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        textViewContainer.backgroundColor = .clear
+        view.addSubview(textViewContainer)
+        
+        NSLayoutConstraint.activate([
+            textViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            textViewContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textViewContainer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+            textViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+        ])
     }
 }
