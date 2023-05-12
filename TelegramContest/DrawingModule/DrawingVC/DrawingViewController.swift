@@ -44,6 +44,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
 //MARK: - textView
     private var textViewContainer = TextView()
+    private var textSlider = WeightSlider()
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -226,5 +227,29 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         textViewContainer.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
         textViewContainer.center = CGPoint(x: view.center.x, y: view.center.y - 30)
     
+    }
+//call when switch to index 1 on the segmented control together with text view
+    private func setupTextSlider() {
+        textSlider.frame = CGRectZero
+        textSlider.translatesAutoresizingMaskIntoConstraints = false
+        textSlider.value = 0.5
+        textSlider.minimumTrackTintColor = .white
+        textSlider.maximumTrackTintColor = .darkGray
+        textSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        textSlider.minimumValue = 15
+        textSlider.maximumValue = 50
+        textSlider.addTarget(self, action: #selector(changeTextViewFontSize(sender:)), for: .valueChanged)
+        
+        view.addSubview(textSlider)
+        
+        NSLayoutConstraint.activate([
+            textSlider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -50),
+            textSlider.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            textSlider.widthAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+    
+    @objc private func changeTextViewFontSize(sender: UISlider) {
+        textViewContainer.textView.font = UIFont.systemFont(ofSize: CGFloat(sender.value))
     }
 }

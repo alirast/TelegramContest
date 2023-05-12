@@ -21,7 +21,7 @@ class TextView: UIView {
         textView.keyboardAppearance = .dark
         textView.spellCheckingType = .no
         textView.autocorrectionType = .no
-        textView.returnKeyType = .done
+        textView.returnKeyType = .default
         textView.isUserInteractionEnabled = true
         return textView
     }()
@@ -94,8 +94,6 @@ class TextView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-   
 }
 
 extension TextView: UITextViewDelegate {
