@@ -216,17 +216,15 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         textViewContainer.textView.resignFirstResponder()
     }
     
-    //call when switch to index 1 on the segmented control
+//call when switch to index 1 on the segmented control
     private func setupTextView() {
         textViewContainer.translatesAutoresizingMaskIntoConstraints = false
         textViewContainer.backgroundColor = .clear
+        textViewContainer.setText("Write here...")
         view.addSubview(textViewContainer)
         
-        NSLayoutConstraint.activate([
-            textViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            textViewContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textViewContainer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-            textViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
-        ])
+        textViewContainer.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
+        textViewContainer.center = CGPoint(x: view.center.x, y: view.center.y - 30)
+    
     }
 }

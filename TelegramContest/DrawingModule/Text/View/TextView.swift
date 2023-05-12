@@ -12,9 +12,17 @@ class TextView: UIView {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = .clear
-        textView.text = "Some text"
-        textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        textView.frame = bounds
+        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         textView.font = UIFont.systemFont(ofSize: 20)
+        textView.delegate = self
+        textView.isScrollEnabled = false
+        textView.keyboardType = .default
+        textView.keyboardAppearance = .dark
+        textView.spellCheckingType = .no
+        textView.autocorrectionType = .no
+        textView.returnKeyType = .done
+        textView.isUserInteractionEnabled = true
         return textView
     }()
     
@@ -22,27 +30,42 @@ class TextView: UIView {
         super.init(frame: frame)
         
         addSubview(textView)
-        
-        NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: topAnchor),
-            textView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
+        addPanGesture()
         setupNotificationCenter()
     }
     
-
-    
-    private func setupNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        textView.frame.size.height = textView.contentSize.height
     }
     
-    @objc private func updateTextView(notification: Notification) {
+    private func addPanGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        addGestureRecognizer(panGesture)
+    }
+    
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: superview)
+        center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
+        gesture.setTranslation(.zero, in: superview)
+    }
+    
+    func setText(_ text: String) {
+        textView.text = text
+        textView.textColor = UIColor.lightGray
+        textView.frame.size.height = textView.contentSize.height
+    }
+    
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    @objc private func updateTextView(_ notification: Notification) {
         let userInfo = notification.userInfo
-        let keyboardRectangle = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        //coordinates of the keyboard
+        let keyboardRectangle = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardFrame = convert(keyboardRectangle, to: window)
         if notification.name == UIResponder.keyboardWillHideNotification {
             textView.contentInset = UIEdgeInsets.zero
@@ -53,8 +76,34 @@ class TextView: UIView {
         textView.scrollRangeToVisible(textView.selectedRange)
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Wanna write something?"
+            textView.textColor = .lightGray
+        }
+    }
+
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
    
+}
+
+extension TextView: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let fixedWidth = textView.frame.size.width
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame
+    }
 }
