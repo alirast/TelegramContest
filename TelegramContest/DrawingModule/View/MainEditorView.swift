@@ -11,6 +11,8 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
     
     var contextMenu = ContextMenuView()
     
+    var currentSegment = DrawOrText.draw
+    
     lazy var drawOrTextSegmentedControl: RoundSegmentedControl = {
         let segmentedControl = RoundSegmentedControl(items: ["Draw", "Text"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +21,7 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)], for: .normal)
         segmentedControl.selectedSegmentTintColor = .gray
         
-        segmentedControl.addTarget(self, action: #selector(switchDrawText), for: .touchUpInside)
+        segmentedControl.addTarget(self, action: #selector(switchDrawText), for: .valueChanged)
         return segmentedControl
     }()
   
@@ -98,13 +100,17 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])
     }
-    
+//FIXME: - segment
     @objc func switchDrawText(_ segmentedControl: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             print("drawing segment")
+            currentSegment = .draw
+            print(currentSegment)
         case 1:
             print("text segment")
+            currentSegment = .text
+            print(currentSegment)
         default:
             break
         }

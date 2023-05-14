@@ -30,6 +30,7 @@
 		4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */; };
 		4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */; };
 		4FA3C16329ED54B900CF75D5 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */; };
+		4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
 		4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
 		4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocols.swift; sourceTree = "<group>"; };
 		4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOrTextSegment.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
 		4FCEE4C629CE0F5F000232C2 /* TelegramContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +269,7 @@
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
 				4F577E2629F448C100ADF032 /* Tool.swift */,
 				4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */,
+				4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */,
 				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
 				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
@@ -432,6 +435,7 @@
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
 				4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */,
+				4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */,
 				4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */,
 				4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */,
 				4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */,

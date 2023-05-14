@@ -11,3 +11,5 @@ canvasView should be bottomAnchor of toolsView.topAnchor
 for toolEditorView need toolView
 text view should be on canvas view or separate view not on the view of 3rd vc
 
+imageForDrawing size 
+enum for text and drawing and adding text view when choosing text segment

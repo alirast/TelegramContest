@@ -69,16 +69,14 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.delegate = self
         containerView.addSubview(canvasView)
         
-        
-        
         //tool
 //FIXME: - should be toolsView
         //canvasView.addSubview(pen)
         setupToolMainViewConstraints()
         
         initialSetupMainEditorView()
-
         
+
     }
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
@@ -212,6 +210,15 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     @objc private func clearAll() {
         print("clear all")
         canvasView.drawing = PKDrawing()
+    }
+//FIXME: - segment
+    func segmentDrawOrText() {
+        switch mainEditorView.currentSegment {
+        case .draw:
+            print("DRAWING VC DRAW")
+        case .text:
+            print("DRAWING VC TEXT")
+        }
     }
     
 //MARK: - textViewMethods
