@@ -9,7 +9,5 @@ fix frame or constraints for tools on drawingVC
 canvasView should be bottomAnchor of toolsView.topAnchor
 
 for toolEditorView need toolView
+text view should be on canvas view or separate view not on the view of 3rd vc
 
-add dark theme for plusButton
-
-nextStep  - text view

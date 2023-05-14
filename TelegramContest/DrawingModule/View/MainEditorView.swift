@@ -11,8 +11,8 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
     
     var contextMenu = ContextMenuView()
     
-    lazy var drawOrTextSegmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Draw", "Text"])
+    lazy var drawOrTextSegmentedControl: RoundSegmentedControl = {
+        let segmentedControl = RoundSegmentedControl(items: ["Draw", "Text"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.backgroundColor = UIColor(red: 0.098, green: 0.098, blue: 0.098, alpha: 1.0)
@@ -88,12 +88,12 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
             downloadButton.heightAnchor.constraint(equalTo: downloadButton.widthAnchor),
             
             colorWheel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            colorWheel.bottomAnchor.constraint(equalTo: cancelAndBackButton.topAnchor, constant: -5),
+            colorWheel.bottomAnchor.constraint(equalTo: cancelAndBackButton.topAnchor, constant: -10),
             colorWheel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
             colorWheel.heightAnchor.constraint(equalTo: colorWheel.widthAnchor),
             
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -5),
+            addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -10),
             addButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])

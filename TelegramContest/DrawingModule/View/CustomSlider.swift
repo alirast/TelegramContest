@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeightSlider: UISlider {
+class CustomSlider: UISlider {
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         let newBounds = CGRect(origin: bounds.origin, size: CGSize(width: bounds.size.width, height: 15.0))
         super.trackRect(forBounds: newBounds)

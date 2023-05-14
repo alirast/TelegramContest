@@ -44,7 +44,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
 //MARK: - textView
     private var textViewContainer = TextView()
-    private var textSlider = WeightSlider()
+    private var textSlider = CustomSlider()
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         initialSetupNavigationBar()
 
-        initialSetupMainEditorView()
         
         view.backgroundColor = .darkGray
         
@@ -76,6 +75,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //FIXME: - should be toolsView
         //canvasView.addSubview(pen)
         setupToolMainViewConstraints()
+        
+        initialSetupMainEditorView()
+
         
     }
 //MARK: - viewDidLayoutSubviews
@@ -127,13 +129,13 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func initialSetupMainEditorView() {
-//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity
+//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity + top anchor (fixed)
         mainEditorView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mainEditorView)
         NSLayoutConstraint.activate([
             mainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainEditorView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainEditorView.topAnchor.constraint(equalTo: mainEditorView.colorWheel.topAnchor),
             mainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
@@ -162,30 +164,30 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.addSubview(lasso)
         
         NSLayoutConstraint.activate([
-            pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             pen.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            pen.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-            pen.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            pen.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            pen.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             pencil.leadingAnchor.constraint(equalTo: pen.trailingAnchor),
             pencil.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            pencil.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-            pencil.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            pencil.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            pencil.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             brush.leadingAnchor.constraint(equalTo: pencil.trailingAnchor),
             brush.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            brush.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-            brush.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            brush.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            brush.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             lasso.leadingAnchor.constraint(equalTo: brush.trailingAnchor),
             lasso.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            lasso.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-            lasso.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            lasso.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            lasso.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
-            eraser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            eraser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             eraser.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            eraser.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-            eraser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
+            eraser.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            eraser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
     }
     

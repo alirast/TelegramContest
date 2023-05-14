@@ -17,8 +17,8 @@ class ToolEditorView: UIView {
         return button
     }()
     
-    lazy var toolWidthSlider: WeightSlider = {
-        let slider = WeightSlider()
+    lazy var toolWidthSlider: CustomSlider = {
+        let slider = CustomSlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.minimumTrackTintColor = .white
         slider.maximumTrackTintColor = .darkGray
