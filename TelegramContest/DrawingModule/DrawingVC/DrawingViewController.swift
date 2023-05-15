@@ -71,6 +71,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         initialSetupMainEditorView()
 
     }
+//MARK: - viewDidLayoutSubviews
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        canvasView.frame = self.setSize()
+    }
+    
 //MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -207,6 +213,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         imageForDrawing.contentMode = .scaleAspectFit
         
+        
         NSLayoutConstraint.activate([
             imageForDrawing.topAnchor.constraint(equalTo: containerView.topAnchor),
             imageForDrawing.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
@@ -214,26 +221,49 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             imageForDrawing.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
     }
-    
+
     private func setupCanvasView() {
         canvasView.backgroundColor = .clear
         canvasView.drawing = drawing
         canvasView.delegate = self
-        
-        canvasView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(canvasView)
-        
-        NSLayoutConstraint.activate([
-            canvasView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            canvasView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            canvasView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            canvasView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        ])
+
+    }
+    
+    private func setSize() -> CGRect {
+        guard let image = imageForDrawing.image else { return CGRect() }
+        let containerRatio = imageForDrawing.frame.size.height / imageForDrawing.frame.size.width
+        let imageRatio = image.size.height / image.size.width
+        return containerRatio > imageRatio ? getHeight() : getWidth()
+    }
+    
+    private func getHeight() -> CGRect {
+        let containerView = imageForDrawing
+        guard let image = imageForDrawing.image else { return CGRect() }
+        let ratio = containerView.frame.size.width / image.size.width
+        let newHeight = ratio * image.size.height
+        let size = CGSize(width: containerView.frame.width, height: newHeight)
+        var yPosition = (containerView.frame.size.height - newHeight) / 2
+        yPosition = (yPosition < 0 ? 0 : yPosition) + containerView.frame.origin.y
+        let origin = CGPoint.init(x: 0, y: yPosition)
+        return CGRect.init(origin: origin, size: size)
+    }
+    
+    private func getWidth() -> CGRect {
+        let containerView = imageForDrawing
+        guard let image = imageForDrawing.image else { return CGRect() }
+        let ratio = containerView.frame.size.height / image.size.height
+        let newWidth = ratio * image.size.width
+        let size = CGSize(width: newWidth, height: containerView.frame.height)
+        let xPosition = ((containerView.frame.size.width - newWidth) / 2) + containerView.frame.origin.x
+        let yPosition = containerView.frame.origin.y
+        let origin = CGPoint.init(x: xPosition, y: yPosition)
+        return CGRect.init(origin: origin, size: size)
     }
     
     @objc private func undoTapped() {
         print("undo tapped")
-        //go back to second screen through presrnter
+        //go back to second screen through presenter
         presenter.undoAction()
     }
     
