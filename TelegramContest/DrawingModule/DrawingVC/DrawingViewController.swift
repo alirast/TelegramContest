@@ -53,21 +53,18 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         initialSetupNavigationBar()
 
         
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .gray
         
-        containerView.backgroundColor = .blue
-        view.addSubview(containerView)
-        
-        
-        
-//TODO: - background should be an image (phasset)
-        imageForDrawing.backgroundColor = .green
-        containerView.addSubview(imageForDrawing)
+        setupContainerView()
 
-        canvasView.backgroundColor = .magenta
-        canvasView.drawing = drawing
-        canvasView.delegate = self
-        containerView.addSubview(canvasView)
+//TODO: - background should be an image (phasset)
+        setupContainerSubview()
+        
+        
+
+        setupCanvasView()
+        
+  
         
         //tool
 //FIXME: - should be toolsView
@@ -78,13 +75,20 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         setupGradientView()
         
         initialSetupMainEditorView()
+
     }
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        containerView.frame = view.bounds
-        imageForDrawing.frame = view.bounds
-        canvasView.frame = view.bounds
+        //container view should be the size like image for drawing
+        //canvas view should be like container view
+        //короче надо настроить container view потому что он всех имеет
+        
+        //containerView.frame = view.bounds
+        //imageForDrawing.frame = view.bounds
+        //canvasView.frame = view.bounds
+
+
     }
 //MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
@@ -200,6 +204,47 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             gradientView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
+        ])
+    }
+    
+    private func setupContainerView() {
+        containerView.backgroundColor = .blue
+        view.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150)
+        ])
+    }
+    
+    private func setupContainerSubview() {
+        imageForDrawing.backgroundColor = .green
+        imageForDrawing.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(imageForDrawing)
+        
+        NSLayoutConstraint.activate([
+            imageForDrawing.topAnchor.constraint(equalTo: containerView.topAnchor),
+            imageForDrawing.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            imageForDrawing.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            imageForDrawing.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+    }
+    
+    private func setupCanvasView() {
+        canvasView.backgroundColor = .clear
+        canvasView.drawing = drawing
+        canvasView.delegate = self
+        
+        canvasView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(canvasView)
+        
+        NSLayoutConstraint.activate([
+            canvasView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            canvasView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            canvasView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            canvasView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
     }
     

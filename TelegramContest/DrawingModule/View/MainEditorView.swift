@@ -90,12 +90,12 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
             downloadButton.heightAnchor.constraint(equalTo: downloadButton.widthAnchor),
             
             colorWheel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            colorWheel.bottomAnchor.constraint(equalTo: cancelAndBackButton.topAnchor, constant: -10),
+            colorWheel.bottomAnchor.constraint(equalTo: cancelAndBackButton.topAnchor, constant: -15),
             colorWheel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
             colorWheel.heightAnchor.constraint(equalTo: colorWheel.widthAnchor),
             
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -10),
+            addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -15),
             addButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1),
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])
