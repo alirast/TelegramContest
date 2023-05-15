@@ -57,37 +57,18 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         setupContainerView()
 
-//TODO: - background should be an image (phasset)
         setupContainerSubview()
         
-        
-
         setupCanvasView()
-        
-  
-        
+
         //tool
 //FIXME: - should be toolsView
         //canvasView.addSubview(pen)
         setupToolMainViewConstraints()
         
-        
         setupGradientView()
         
         initialSetupMainEditorView()
-
-    }
-//MARK: - viewDidLayoutSubviews
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        //container view should be the size like image for drawing
-        //canvas view should be like container view
-        //короче надо настроить container view потому что он всех имеет
-        
-        //containerView.frame = view.bounds
-        //imageForDrawing.frame = view.bounds
-        //canvasView.frame = view.bounds
-
 
     }
 //MARK: - viewDidAppear
@@ -208,7 +189,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func setupContainerView() {
-        containerView.backgroundColor = .blue
+        containerView.backgroundColor = .clear
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -220,9 +201,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func setupContainerSubview() {
-        imageForDrawing.backgroundColor = .green
+        imageForDrawing.backgroundColor = .clear
         imageForDrawing.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageForDrawing)
+        
+        imageForDrawing.contentMode = .scaleAspectFit
         
         NSLayoutConstraint.activate([
             imageForDrawing.topAnchor.constraint(equalTo: containerView.topAnchor),
