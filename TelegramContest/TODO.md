@@ -11,5 +11,7 @@ canvasView should be bottomAnchor of toolsView.topAnchor
 for toolEditorView need toolView
 text view should be on canvas view or separate view not on the view of 3rd vc
 
+WEEK
 imageForDrawing size 
-enum for text and drawing and adding text view when choosing text segment
+enum for text and drawing and adding text view when choosing text segment (method doesnt work in drawing vc)
+access allowing maybe the probelm is in navigation (module builder or router)

@@ -58,7 +58,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         containerView.backgroundColor = .blue
         view.addSubview(containerView)
         
-        setupGradientView()
+        
         
 //TODO: - background should be an image (phasset)
         imageForDrawing.backgroundColor = .green
@@ -74,9 +74,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         //canvasView.addSubview(pen)
         setupToolMainViewConstraints()
         
-        initialSetupMainEditorView()
         
-
+        setupGradientView()
+        
+        initialSetupMainEditorView()
     }
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
@@ -155,11 +156,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         brush.translatesAutoresizingMaskIntoConstraints = false
         lasso.translatesAutoresizingMaskIntoConstraints = false
         
-        canvasView.addSubview(pen)
-        canvasView.addSubview(pencil)
-        canvasView.addSubview(eraser)
-        canvasView.addSubview(brush)
-        canvasView.addSubview(lasso)
+        //added to view (were on canvas view) because we will save canvas view to gallery
+        view.addSubview(pen)
+        view.addSubview(pencil)
+        view.addSubview(eraser)
+        view.addSubview(brush)
+        view.addSubview(lasso)
         
         NSLayoutConstraint.activate([
             pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
