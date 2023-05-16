@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol MainEditorDelegate: AnyObject {
+    func chooseDrawOrText(_ sender: UISegmentedControl)
+}
+
 class MainEditorView: UIView, ContextMenuViewDelegate {
+    
+    weak var delegate: MainEditorDelegate?
     
     var contextMenu = ContextMenuView()
     
-    var currentSegment = DrawOrText.draw
+    //var currentSegment: DrawOrText = .draw
     
     lazy var drawOrTextSegmentedControl: RoundSegmentedControl = {
         let segmentedControl = RoundSegmentedControl(items: ["Draw", "Text"])
@@ -101,19 +107,8 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         ])
     }
 //FIXME: - segment
-    @objc func switchDrawText(_ segmentedControl: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            print("drawing segment")
-            currentSegment = .draw
-            print(currentSegment)
-        case 1:
-            print("text segment")
-            currentSegment = .text
-            print(currentSegment)
-        default:
-            break
-        }
+    @objc func switchDrawText(sender: UISegmentedControl) {
+        delegate?.chooseDrawOrText(sender)
     }
     
     required init?(coder: NSCoder) {

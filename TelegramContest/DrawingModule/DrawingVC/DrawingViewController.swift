@@ -42,6 +42,13 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
     let brush = Tool(toolBody: "brush", toolTip: "brushTip")
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
+//MARK: - segment
+//FIXME: - the same is in the main editor view
+    /*var currentSegment: DrawOrText = .draw {
+        didSet {
+            segmentDrawOrText()
+        }
+    }*/
 //MARK: - textView
     private var textViewContainer = TextView()
     private var textSlider = CustomSlider()
@@ -122,6 +129,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     private func initialSetupMainEditorView() {
 //FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity + top anchor (fixed)
+        mainEditorView.delegate = self
         mainEditorView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mainEditorView)
         NSLayoutConstraint.activate([
@@ -242,15 +250,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("clear all")
         canvasView.drawing = PKDrawing()
     }
-//FIXME: - segment
-    func segmentDrawOrText() {
-        switch mainEditorView.currentSegment {
-        case .draw:
-            print("DRAWING VC DRAW")
-        case .text:
-            print("DRAWING VC TEXT")
-        }
-    }
     
 //MARK: - textViewMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -291,5 +290,19 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     @objc private func changeTextViewFontSize(sender: UISlider) {
         textViewContainer.textView.font = UIFont.systemFont(ofSize: CGFloat(sender.value))
+    }
+}
+
+extension DrawingViewController: MainEditorDelegate {
+    func chooseDrawOrText(_ switcher: UISegmentedControl) {
+        print("IN DRAWING VIEW CONTROLLER CHOOSE DRAW OR TEXT")
+        switch switcher.selectedSegmentIndex {
+        case 0:
+            print("DRAW")
+        case 1:
+            print("TEXT")
+        default:
+            break
+        }
     }
 }
