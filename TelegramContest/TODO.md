@@ -16,4 +16,8 @@ WEEK
 enum for text and drawing and adding text view when choosing text segment (method doesnt work in drawing vc)
 access allowing maybe the probelm is in navigation (module builder or router)
 
+today
+text view add to the drawingVC
+figure out setSize function how it works
+save function(but text view is priority)
 

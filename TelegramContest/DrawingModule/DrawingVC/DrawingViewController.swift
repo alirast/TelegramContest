@@ -74,7 +74,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        canvasView.frame = self.setSize()
+        
+        guard let image = imageForDrawing.image else { return }
+        canvasView.frame = SizeManager.setSize(image, toFitIn: imageForDrawing)
     }
     
 //MARK: - viewDidAppear
@@ -207,7 +209,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func setupContainerSubview() {
-        imageForDrawing.backgroundColor = .clear
+        imageForDrawing.backgroundColor = .blue
         imageForDrawing.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageForDrawing)
         
@@ -228,37 +230,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.delegate = self
         containerView.addSubview(canvasView)
 
-    }
-    
-    private func setSize() -> CGRect {
-        guard let image = imageForDrawing.image else { return CGRect() }
-        let containerRatio = imageForDrawing.frame.size.height / imageForDrawing.frame.size.width
-        let imageRatio = image.size.height / image.size.width
-        return containerRatio > imageRatio ? getHeight() : getWidth()
-    }
-    
-    private func getHeight() -> CGRect {
-        let containerView = imageForDrawing
-        guard let image = imageForDrawing.image else { return CGRect() }
-        let ratio = containerView.frame.size.width / image.size.width
-        let newHeight = ratio * image.size.height
-        let size = CGSize(width: containerView.frame.width, height: newHeight)
-        var yPosition = (containerView.frame.size.height - newHeight) / 2
-        yPosition = (yPosition < 0 ? 0 : yPosition) + containerView.frame.origin.y
-        let origin = CGPoint.init(x: 0, y: yPosition)
-        return CGRect.init(origin: origin, size: size)
-    }
-    
-    private func getWidth() -> CGRect {
-        let containerView = imageForDrawing
-        guard let image = imageForDrawing.image else { return CGRect() }
-        let ratio = containerView.frame.size.height / image.size.height
-        let newWidth = ratio * image.size.width
-        let size = CGSize(width: newWidth, height: containerView.frame.height)
-        let xPosition = ((containerView.frame.size.width - newWidth) / 2) + containerView.frame.origin.x
-        let yPosition = containerView.frame.origin.y
-        let origin = CGPoint.init(x: xPosition, y: yPosition)
-        return CGRect.init(origin: origin, size: size)
     }
     
     @objc private func undoTapped() {
