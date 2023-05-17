@@ -14,7 +14,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     //navigation buttons
 //TODO: - separate buttons to view
     let undoNavigationBarImage = UIImage(named: "undo")?.withRenderingMode(.alwaysTemplate)
-    let clearNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
+    let clearAllNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
+    let doneTextNavigationBarButton = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: nil)
     
     let mainEditorView = MainEditorView()
     let toolEditorView = ToolEditorView() //when a tool is chosen - didnt add to subview now and didnt call the function for the setup
@@ -59,7 +60,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         initialSetupNavigationBar()
 
-        
         view.backgroundColor = .gray
         
         setupContainerView()
@@ -121,10 +121,17 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         }
         
         navigationItem.hidesBackButton = true
-        clearNavigationBarButton.tintColor = .white
-        navigationItem.rightBarButtonItem = clearNavigationBarButton
-        navigationItem.rightBarButtonItem?.target = self
-        navigationItem.rightBarButtonItem?.action = #selector(clearAll)
+        
+        clearAllNavigationBarButton.tintColor = .white
+        clearAllNavigationBarButton.target = self
+        clearAllNavigationBarButton.action = #selector(clearAll)
+        
+        doneTextNavigationBarButton.tintColor = .white
+        doneTextNavigationBarButton.target = self
+        doneTextNavigationBarButton.action = #selector(doneText)
+        
+        navigationItem.rightBarButtonItems = [clearAllNavigationBarButton, doneTextNavigationBarButton]
+        
     }
     
     private func initialSetupMainEditorView() {
@@ -237,6 +244,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.drawing = drawing
         canvasView.delegate = self
         containerView.addSubview(canvasView)
+        
 
     }
     
@@ -249,6 +257,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     @objc private func clearAll() {
         print("clear all")
         canvasView.drawing = PKDrawing()
+        textViewContainer.removeFromSuperview()
     }
     
 //MARK: - textViewMethods
@@ -264,6 +273,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
   
         textViewContainer.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
         textViewContainer.center = CGPoint(x: canvasView.center.x, y: canvasView.center.y)
+        
+    }
+    
+    @objc func doneText() {
+        canvasView.endEditing(true)
     }
     
 //call when switch to index 1 on the segmented control together with text view
@@ -278,7 +292,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         textSlider.maximumValue = 50
         textSlider.addTarget(self, action: #selector(changeTextViewFontSize(sender:)), for: .valueChanged)
         
-        containerView.addSubview(textSlider)
+        view.addSubview(textSlider)
         
         NSLayoutConstraint.activate([
             textSlider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -50),
@@ -298,6 +312,7 @@ extension DrawingViewController: MainEditorDelegate {
         switch switcher.selectedSegmentIndex {
         case 0:
             print("DRAW")
+            textSlider.removeFromSuperview()
         case 1:
             print("TEXT")
             setupTextView()
