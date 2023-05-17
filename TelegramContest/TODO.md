@@ -17,8 +17,9 @@ enum for text and drawing and adding text view when choosing text segment (metho
 access allowing maybe the probelm is in navigation (module builder or router)
 
 today
-segmented control fix (need didset?)
-resign first responder for text view if image is on the whole canvas View? return button? maybe special keyboard?
+replace text view somewhere higher
+accidential scrolling of text view remove
 
+segmented control fix (need didset?)
 save function(but text view is priority)
 
