@@ -17,7 +17,8 @@ enum for text and drawing and adding text view when choosing text segment (metho
 access allowing maybe the probelm is in navigation (module builder or router)
 
 today
-text view add to the drawingVC
+segmented control fix (need didset?)
+resign first responder for text view if image is on the whole canvas View? return button? maybe special keyboard?
 
 save function(but text view is priority)
 

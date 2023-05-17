@@ -106,7 +106,7 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor)
         ])
     }
-//FIXME: - segment
+    
     @objc func switchDrawText(sender: UISegmentedControl) {
         delegate?.chooseDrawOrText(sender)
     }

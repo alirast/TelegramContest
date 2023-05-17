@@ -51,7 +51,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }*/
 //MARK: - textView
     private var textViewContainer = TextView()
-    private var textSlider = CustomSlider()
+    private var textSlider: CustomSlider!
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -258,18 +258,17 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
 //call when switch to index 1 on the segmented control
     private func setupTextView() {
-        textViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        textViewContainer.backgroundColor = .clear
         textViewContainer.setText("Write here...")
-        view.addSubview(textViewContainer)
         
+        canvasView.addSubview(textViewContainer)
+  
         textViewContainer.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
-        textViewContainer.center = CGPoint(x: view.center.x, y: view.center.y - 30)
-    
+        textViewContainer.center = CGPoint(x: canvasView.center.x, y: canvasView.center.y)
     }
+    
 //call when switch to index 1 on the segmented control together with text view
     private func setupTextSlider() {
-        textSlider.frame = CGRectZero
+        textSlider = CustomSlider(frame: CGRectZero)
         textSlider.translatesAutoresizingMaskIntoConstraints = false
         textSlider.value = 0.5
         textSlider.minimumTrackTintColor = .white
@@ -279,7 +278,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         textSlider.maximumValue = 50
         textSlider.addTarget(self, action: #selector(changeTextViewFontSize(sender:)), for: .valueChanged)
         
-        view.addSubview(textSlider)
+        containerView.addSubview(textSlider)
         
         NSLayoutConstraint.activate([
             textSlider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -50),
@@ -301,6 +300,8 @@ extension DrawingViewController: MainEditorDelegate {
             print("DRAW")
         case 1:
             print("TEXT")
+            setupTextView()
+            setupTextSlider()
         default:
             break
         }
