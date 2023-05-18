@@ -13,13 +13,20 @@ text view should be on canvas view or separate view not on the view of 3rd vc
 
 WEEK
 
-enum for text and drawing and adding text view when choosing text segment (method doesnt work in drawing vc)
 access allowing maybe the probelm is in navigation (module builder or router)
+check navigation - when allow all pics - need to back to first vc, doesn't go to the collection view
+done button removes keyboard. something else?
+clear all clears canvas view and text view. something else?
+color wheel need transfer the color in chosen tool and chosen tool should show chosen color
+color of text in text view? white?
+tapping 2 times on the tool should show tool editor view
+tapping 1 time on the tool show animation or tool higher
+plus button - choose figure - add figure to the canvas view
+save button - save canvas view with drawing and text and figure to the gallery
 
 today
-replace text view somewhere higher
-accidential scrolling of text view remove
 
+
+accidential scrolling of text view remove
 segmented control fix (need didset?)
-save function(but text view is priority)
 

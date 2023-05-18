@@ -224,7 +224,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     private func setupContainerSubview() {
-        imageForDrawing.backgroundColor = .blue
+        imageForDrawing.backgroundColor = .clear
         imageForDrawing.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageForDrawing)
         
@@ -328,6 +328,28 @@ extension DrawingViewController: MainEditorDelegate {
             setupTextSlider()
         default:
             break
+        }
+    }
+
+    private func createFullImage(drawingLayer: UIImage) -> UIImage? {
+        let bottomImage = imageForDrawing.image
+        let newImage = autoreleasepool { () -> UIImage in
+            UIGraphicsBeginImageContextWithOptions(self.canvasView.frame.size, false, 0.0)
+            bottomImage?.draw(in: CGRect(origin: CGPoint.zero, size: self.canvasView.frame.size))
+            //getting all the subviews (drawing and text) from canvas view
+            self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
+            guard let createdImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+            UIGraphicsEndImageContext()
+            return createdImage
+        }
+        return newImage
+    }
+    
+    
+    func saveImageToPhotos() {
+        let drawing = self.canvasView.drawing.image(from: self.canvasView.bounds, scale: 0)
+        if let editedImage = self.createFullImage(drawingLayer: drawing) {
+            UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)
         }
     }
 }

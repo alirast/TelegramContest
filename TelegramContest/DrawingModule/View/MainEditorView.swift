@@ -9,6 +9,7 @@ import UIKit
 
 protocol MainEditorDelegate: AnyObject {
     func chooseDrawOrText(_ sender: UISegmentedControl)
+    func saveImageToPhotos()
 }
 
 class MainEditorView: UIView, ContextMenuViewDelegate {
@@ -36,6 +37,7 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "download")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .gray //initial setup
+        button.addTarget(self, action: #selector(saveImage), for: .touchUpInside)
         return button
     }()
     
@@ -109,6 +111,10 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
     
     @objc func switchDrawText(sender: UISegmentedControl) {
         delegate?.chooseDrawOrText(sender)
+    }
+    
+    @objc func saveImage() {
+        delegate?.saveImageToPhotos()
     }
     
     required init?(coder: NSCoder) {
