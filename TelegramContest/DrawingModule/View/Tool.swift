@@ -9,12 +9,16 @@ import UIKit
 
 final class Tool: UIView {
     private let toolBodyImage = UIImageView()
-    private let toolTipImage = UIImageView()
+    var toolTipImage = UIImageView()
+    
+    var editor = MainEditorView()
+    
     
     init(toolBody: String, toolTip: String?) {
         super.init(frame: .zero)
         toolBodyImage.image = UIImage(named: toolBody)
-        toolTipImage.image = UIImage(named: toolTip ?? "")
+        toolTipImage.image = UIImage(named: toolTip ?? "")?.withRenderingMode(.alwaysTemplate)
+        toolTipImage.tintColor = editor.colorWheel.selectedColor
         
         addSubview(toolBodyImage)
         addSubview(toolTipImage)

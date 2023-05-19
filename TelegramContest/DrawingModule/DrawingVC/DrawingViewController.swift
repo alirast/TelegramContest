@@ -25,6 +25,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     private let canvasView: PKCanvasView = {
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
+        //canvas.tool = PKInkingTool(.marker, color: .red, width: 10)
         return canvas
     }()
     

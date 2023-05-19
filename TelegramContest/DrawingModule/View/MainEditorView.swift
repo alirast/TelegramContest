@@ -54,6 +54,7 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         let colorWheel = UIColorWell()
         colorWheel.translatesAutoresizingMaskIntoConstraints = false
         colorWheel.title = "Colors"
+        //colorWheel.selectedColor = .black
         return colorWheel
     }()
     

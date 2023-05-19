@@ -18,14 +18,15 @@ check navigation - when allow all pics - need to back to first vc, doesn't go to
 done button removes keyboard. something else?
 clear all clears canvas view and text view. something else?
 color wheel need transfer the color in chosen tool and chosen tool should show chosen color
-color of text in text view? white?
++?color of text in text view? white?
 tapping 2 times on the tool should show tool editor view
 tapping 1 time on the tool show animation or tool higher
 plus button - choose figure - add figure to the canvas view
-save button - save canvas view with drawing and text and figure to the gallery
++save button - save canvas view with drawing and text and figure to the gallery
+enum for tools to connect tool that we chose to the pencil kit tool
 
 today
-
+need automatic changing of the color
 
 accidential scrolling of text view remove
 segmented control fix (need didset?)
