@@ -11,7 +11,7 @@ protocol MainEditorDelegate: AnyObject {
     func chooseDrawOrText(_ sender: UISegmentedControl)
     func saveImageToPhotos()
 }
-
+//мб без всяких протоколов сделать напрямую но с методом и все?
 class MainEditorView: UIView, ContextMenuViewDelegate {
     
     weak var delegate: MainEditorDelegate?
@@ -54,9 +54,15 @@ class MainEditorView: UIView, ContextMenuViewDelegate {
         let colorWheel = UIColorWell()
         colorWheel.translatesAutoresizingMaskIntoConstraints = false
         colorWheel.title = "Colors"
-        //colorWheel.selectedColor = .black
+        colorWheel.selectedColor = .blue
+        colorWheel.addTarget(self, action: #selector(colorWheelDidChange(_ :)), for: .valueChanged)
         return colorWheel
     }()
+    
+    @objc func colorWheelDidChange(_ sender: UIColorWell) {
+        print("COLOR CHANGED")
+        //tool.toolTipImage.tintColor = sender.selectedColor
+    }
     
     lazy var addButton: UIButton = {
         let button = UIButton()
