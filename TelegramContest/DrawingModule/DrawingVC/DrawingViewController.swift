@@ -17,7 +17,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let clearAllNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
     let doneTextNavigationBarButton = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: nil)
     
-    let mainEditorView = MainEditorView()
+    let segmentedMainEditorView = SegmentedMainEditorView()
+    let leftMainEditorView = LeftMainEditorView()
+    let rightMainEditorView = RightMainEditorView()
     let toolEditorView = ToolEditorView() //when a tool is chosen - didnt add to subview now and didnt call the function for the setup
 
     var presenter: DrawingPresenterProtocol!
@@ -39,6 +41,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     //gradient view
     let gradientView = GradientLayerView()
 //MARK: - tools
+    var selectedTool = Tool()
+    
     let pen = Tool(toolBody: "pen", toolTip: "penTip")
     let pencil = Tool(toolBody: "pencil", toolTip: "pencilTip")
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
@@ -57,6 +61,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+//initial color for selectedTool + initally selectedTool is pen
+        selectedTool = pen
+        selectedTool.toolTipImage.tintColor = leftMainEditorView.colorWheel.selectedColor
+        
         presenter.setPhoto()
         
         initialSetupNavigationBar()
@@ -69,16 +77,16 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         setupCanvasView()
 
-        //tool
-//FIXME: - should be toolsView
-        //canvasView.addSubview(pen)
-        setupToolMainViewConstraints()
-        
         setupGradientView()
         
+        setupRightEditorView()
+        setupLeftEditorView()
+        setupToolMainViewConstraints()
         initialSetupMainEditorView()
 
     }
+    
+
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -137,14 +145,42 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     private func initialSetupMainEditorView() {
 //FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity + top anchor (fixed)
-        mainEditorView.delegate = self
-        mainEditorView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(mainEditorView)
+        segmentedMainEditorView.delegate = self
+        segmentedMainEditorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(segmentedMainEditorView)
+        
         NSLayoutConstraint.activate([
-            mainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainEditorView.topAnchor.constraint(equalTo: mainEditorView.colorWheel.topAnchor),
-            mainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
+            segmentedMainEditorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedMainEditorView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            segmentedMainEditorView.topAnchor.constraint(equalTo: segmentedMainEditorView.drawOrTextSegmentedControl.topAnchor),
+            segmentedMainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
+        ])
+    }
+    
+    private func setupLeftEditorView() {
+        leftMainEditorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(leftMainEditorView)
+        
+        leftMainEditorView.colorWheel.addTarget(self, action: #selector(changingColor(sender:)), for: .valueChanged)
+        
+        NSLayoutConstraint.activate([
+            leftMainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            leftMainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            leftMainEditorView.topAnchor.constraint(equalTo: rightMainEditorView.addButton.topAnchor),
+            leftMainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
+        ])
+    }
+    
+    private func setupRightEditorView() {
+        rightMainEditorView.translatesAutoresizingMaskIntoConstraints = false
+        rightMainEditorView.delegate = self
+        view.addSubview(rightMainEditorView)
+        
+        NSLayoutConstraint.activate([
+            rightMainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            rightMainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            rightMainEditorView.topAnchor.constraint(equalTo: rightMainEditorView.addButton.topAnchor),
+            rightMainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
     
@@ -165,6 +201,15 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         brush.translatesAutoresizingMaskIntoConstraints = false
         lasso.translatesAutoresizingMaskIntoConstraints = false
         
+        
+        pen.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(penTapped)))
+        pencil.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pencilTapped)))
+        brush.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(brushTapped)))
+        
+        eraser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(eraserTapped)))
+        lasso.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lassoTapped)))
+        
+        
         //added to view (were on canvas view) because we will save canvas view to gallery
         view.addSubview(pen)
         view.addSubview(pencil)
@@ -174,32 +219,31 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         NSLayoutConstraint.activate([
             pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            pen.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            pen.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
             pen.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             pen.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             pencil.leadingAnchor.constraint(equalTo: pen.trailingAnchor),
-            pencil.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            pencil.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
             pencil.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             pencil.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             brush.leadingAnchor.constraint(equalTo: pencil.trailingAnchor),
-            brush.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            brush.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
             brush.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             brush.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             lasso.leadingAnchor.constraint(equalTo: brush.trailingAnchor),
-            lasso.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            lasso.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
             lasso.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             lasso.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             eraser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            eraser.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            eraser.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
             eraser.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             eraser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
     }
-    
     
     private func setupGradientView() {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
@@ -208,7 +252,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            gradientView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
+            gradientView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
     }
     
@@ -259,6 +303,42 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("clear all")
         canvasView.drawing = PKDrawing()
         textViewContainer.removeFromSuperview()
+    }
+    
+//MARK: - colorWheel will update tool's tip color
+    @objc func changingColor(sender: UIColorWell) {
+        selectedTool.toolTipImage.tintColor = sender.selectedColor
+    }
+    
+//MARK: - tools' methods
+    @objc func penTapped() {
+        print("tool tapped")
+        selectedTool = pen
+        print(selectedTool)
+    }
+    
+    @objc func pencilTapped() {
+        print("pencil tapped")
+        selectedTool = pencil
+        print(selectedTool)
+    }
+    
+    @objc func brushTapped() {
+        print("brush tapped")
+        selectedTool = brush
+        print(selectedTool)
+    }
+    
+    @objc func eraserTapped() {
+        print("eraser tapped")
+        selectedTool = eraser
+        print(selectedTool)
+    }
+    
+    @objc func lassoTapped() {
+        print("lasso tapped")
+        selectedTool = lasso
+        print(selectedTool)
     }
     
 //MARK: - textViewMethods
@@ -348,6 +428,7 @@ extension DrawingViewController: MainEditorDelegate {
     
     
     func saveImageToPhotos() {
+        print("save image to photos")
         let drawing = self.canvasView.drawing.image(from: self.canvasView.bounds, scale: 0)
         if let editedImage = self.createFullImage(drawingLayer: drawing) {
             UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)

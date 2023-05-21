@@ -8,18 +8,15 @@
 import UIKit
 
 final class Tool: UIView {
-    private let toolBodyImage = UIImageView()
+    var toolBodyImage = UIImageView()
     var toolTipImage = UIImageView()
-    
-    var editor = MainEditorView()
-    
     
     init(toolBody: String, toolTip: String?) {
         super.init(frame: .zero)
         toolBodyImage.image = UIImage(named: toolBody)
+        toolBodyImage.isUserInteractionEnabled = true
         toolTipImage.image = UIImage(named: toolTip ?? "")?.withRenderingMode(.alwaysTemplate)
-        toolTipImage.tintColor = editor.colorWheel.selectedColor
-        
+        //toolTipImage.tintColor = editor.colorWheel.selectedColor
         addSubview(toolBodyImage)
         addSubview(toolTipImage)
         
@@ -27,6 +24,11 @@ final class Tool: UIView {
         toolTipImage.translatesAutoresizingMaskIntoConstraints = false
         
         setupTool()
+    
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     private func setupTool() {

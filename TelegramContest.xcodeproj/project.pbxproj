@@ -13,7 +13,7 @@
 		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
-		4F14D85729F57AFE00F16CC2 /* MainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */; };
+		4F14D85729F57AFE00F16CC2 /* SegmentedMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85629F57AFE00F16CC2 /* SegmentedMainEditorView.swift */; };
 		4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */; };
 		4F3768E62A09575300246824 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3768E52A09575300246824 /* TextView.swift */; };
 		4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */; };
@@ -33,6 +33,8 @@
 		4FA3C16329ED54B900CF75D5 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */; };
 		4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
+		4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF32112A1A348700B85D0D /* LeftMainEditorView.swift */; };
+		4FBF32142A1A367000B85D0D /* RightMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF32132A1A367000B85D0D /* RightMainEditorView.swift */; };
 		4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5C9BB29E05049009A351B /* ContextMenuView.swift */; };
 		4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */; };
 		4FCEE4CC29CE0F5F000232C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEE4CB29CE0F5F000232C2 /* SceneDelegate.swift */; };
@@ -52,7 +54,7 @@
 		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
-		4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditorView.swift; sourceTree = "<group>"; };
+		4F14D85629F57AFE00F16CC2 /* SegmentedMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedMainEditorView.swift; sourceTree = "<group>"; };
 		4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentedControl.swift; sourceTree = "<group>"; };
 		4F3768E52A09575300246824 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		4F3C73E229E81C1300FCF6D1 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
 		4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOrTextSegment.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
+		4FBF32112A1A348700B85D0D /* LeftMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMainEditorView.swift; sourceTree = "<group>"; };
+		4FBF32132A1A367000B85D0D /* RightMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMainEditorView.swift; sourceTree = "<group>"; };
 		4FC5C9BB29E05049009A351B /* ContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuView.swift; sourceTree = "<group>"; };
 		4FCEE4C629CE0F5F000232C2 /* TelegramContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCEE4C929CE0F5F000232C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +257,26 @@
 			path = AccessModule;
 			sourceTree = "<group>";
 		};
+		4FBF320F2A1A33F200B85D0D /* MainEditorView */ = {
+			isa = PBXGroup;
+			children = (
+				4F14D85629F57AFE00F16CC2 /* SegmentedMainEditorView.swift */,
+				4FBF32112A1A348700B85D0D /* LeftMainEditorView.swift */,
+				4FBF32132A1A367000B85D0D /* RightMainEditorView.swift */,
+			);
+			path = MainEditorView;
+			sourceTree = "<group>";
+		};
+		4FBF32102A1A343900B85D0D /* CustomViewSetup */ = {
+			isa = PBXGroup;
+			children = (
+				4F577E2629F448C100ADF032 /* Tool.swift */,
+				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
+				4F4A571529FD837C00B7347B /* CustomSlider.swift */,
+			);
+			path = CustomViewSetup;
+			sourceTree = "<group>";
+		};
 		4FC5C99929E02C6E009A351B /* DrawingModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,13 +294,11 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
-				4F577E2629F448C100ADF032 /* Tool.swift */,
-				4F14D85629F57AFE00F16CC2 /* MainEditorView.swift */,
 				4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */,
-				4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
 				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
-				4F4A571529FD837C00B7347B /* CustomSlider.swift */,
+				4FBF320F2A1A33F200B85D0D /* MainEditorView */,
+				4FBF32102A1A343900B85D0D /* CustomViewSetup */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,7 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F14D85729F57AFE00F16CC2 /* MainEditorView.swift in Sources */,
+				4F14D85729F57AFE00F16CC2 /* SegmentedMainEditorView.swift in Sources */,
 				4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */,
 				4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */,
 				4F04DA452A13CC8D00CBBAC2 /* SizeManager.swift in Sources */,
@@ -422,12 +444,14 @@
 				4FCEE4CE29CE0F5F000232C2 /* AccessViewController.swift in Sources */,
 				4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */,
 				4F3768E62A09575300246824 /* TextView.swift in Sources */,
+				4FBF32142A1A367000B85D0D /* RightMainEditorView.swift in Sources */,
 				4F48BB2129EEFD73003A4F96 /* ShimmerButton.swift in Sources */,
 				4F94DE5D29FFFECF00E30266 /* ContextMenuProtocol.swift in Sources */,
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
 				4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */,
 				4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */,
+				4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
 				4F4A571629FD837C00B7347B /* CustomSlider.swift in Sources */,
