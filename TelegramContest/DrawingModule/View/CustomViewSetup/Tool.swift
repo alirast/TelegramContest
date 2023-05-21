@@ -31,6 +31,12 @@ final class Tool: UIView {
         super.init(frame: frame)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            animateSelectedTool()
+        }
+    }
+    
     private func setupTool() {
         toolBodyImage.contentMode = .scaleAspectFit
         toolTipImage.contentMode = .scaleAspectFit
@@ -44,6 +50,16 @@ final class Tool: UIView {
             toolTipImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             toolTipImage.topAnchor.constraint(equalTo: topAnchor)
         ])
+    }
+    
+    private func animateSelectedTool() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 3, -5, 3, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        self.layer.add(animation, forKey: "shake")
     }
     
     required init?(coder: NSCoder) {

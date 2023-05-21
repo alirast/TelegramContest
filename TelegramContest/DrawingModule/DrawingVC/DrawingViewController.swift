@@ -219,27 +219,27 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         NSLayoutConstraint.activate([
             pen.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            pen.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            pen.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -27),
             pen.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             pen.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             pencil.leadingAnchor.constraint(equalTo: pen.trailingAnchor),
-            pencil.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            pencil.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -27),
             pencil.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             pencil.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             brush.leadingAnchor.constraint(equalTo: pencil.trailingAnchor),
-            brush.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            brush.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -27),
             brush.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             brush.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             lasso.leadingAnchor.constraint(equalTo: brush.trailingAnchor),
-            lasso.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            lasso.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -27),
             lasso.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             lasso.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
             eraser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            eraser.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            eraser.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -27),
             eraser.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             eraser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
