@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0439CC2A1BBC0900C37990 /* PresentationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439CB2A1BBC0900C37990 /* PresentationViewDelegate.swift */; };
+		4F0439CE2A1BCB4C00C37990 /* MainEditorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439CD2A1BCB4C00C37990 /* MainEditorDelegate.swift */; };
 		4F04DA452A13CC8D00CBBAC2 /* SizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04DA442A13CC8D00CBBAC2 /* SizeManager.swift */; };
 		4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */; };
 		4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0439CB2A1BBC0900C37990 /* PresentationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewDelegate.swift; sourceTree = "<group>"; };
+		4F0439CD2A1BCB4C00C37990 /* MainEditorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditorDelegate.swift; sourceTree = "<group>"; };
 		4F04DA442A13CC8D00CBBAC2 /* SizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeManager.swift; sourceTree = "<group>"; };
 		4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPresenter.swift; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 			children = (
 				4FA3C15929ED4D7700CF75D5 /* DrawingModuleProtocols.swift */,
 				4F94DE5C29FFFECF00E30266 /* ContextMenuProtocol.swift */,
+				4F0439CB2A1BBC0900C37990 /* PresentationViewDelegate.swift */,
+				4F0439CD2A1BCB4C00C37990 /* MainEditorDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -475,6 +481,8 @@
 				4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */,
 				4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */,
 				4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */,
+				4F0439CC2A1BBC0900C37990 /* PresentationViewDelegate.swift in Sources */,
+				4F0439CE2A1BCB4C00C37990 /* MainEditorDelegate.swift in Sources */,
 				4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */,
 				4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,

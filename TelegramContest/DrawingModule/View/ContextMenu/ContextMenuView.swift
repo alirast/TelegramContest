@@ -7,42 +7,60 @@
 
 import UIKit
 
+enum Shape: String {
+    case shapeRectangle
+    case shapeEllipse
+    case shapeBubble
+    case shapeStar
+    case shapeArrow
+}
+
 class ContextMenuView: UIView {
     weak var delegate: ContextMenuViewDelegate?
     
     lazy var shapeRectangle: UIAction = {
-        var rectangle = UIAction(title: "Rectangle", image: UIImage(named: "shapeRectangle")) { action in
+        var rectangle = UIAction(title: "Rectangle", image: UIImage(named: Shape.shapeRectangle.rawValue)) { action in
             print("Rectangle chosen")
+            
+            self.createShape(Shape.shapeRectangle.rawValue)
         }
         
         return rectangle
     }()
     
     lazy var shapeEllipse: UIAction = {
-        var ellipse = UIAction(title: "Ellipse", image: UIImage(named: "shapeEllipse")) { action in
+        var ellipse = UIAction(title: "Ellipse", image: UIImage(named: Shape.shapeEllipse.rawValue)) { action in
             print("Ellipse chosen")
+            
+            self.createShape(Shape.shapeEllipse.rawValue)
         }
         return ellipse
     }()
     
     lazy var shapeBubble: UIAction = {
-        var bubble = UIAction(title: "Bubble", image: UIImage(named: "shapeBubble")) { action in
+        var bubble = UIAction(title: "Bubble", image: UIImage(named: Shape.shapeBubble.rawValue)) { action in
             print("Bubble chosen")
+            
+            self.createShape(Shape.shapeBubble.rawValue)
         }
         return bubble
     }()
     
     lazy var shapeStar: UIAction = {
-        var star = UIAction(title: "Star", image: UIImage(named: "shapeStar")) { action in
+        var star = UIAction(title: "Star", image: UIImage(named: Shape.shapeStar.rawValue)) { action in
             print("Star chosen")
+            
+            self.createShape(Shape.shapeStar.rawValue)
         }
         return star
     }()
     
     lazy var shapeArrow: UIAction = {
-        var arrow = UIAction(title: "Arrow", image: UIImage(named: "shapeArrow")) {
+        var arrow = UIAction(title: "Arrow", image: UIImage(named: Shape.shapeArrow.rawValue)) {
             action in
             print("Arrow chosen")
+            
+            self.createShape(Shape.shapeArrow.rawValue)
         }
         return arrow
     }()
@@ -51,4 +69,10 @@ class ContextMenuView: UIView {
         let menu = UIMenu(title: "Shapes", options: .displayInline, children: [shapeRectangle, shapeEllipse, shapeBubble, shapeStar, shapeArrow])
         return menu
     }()
+    
+    func createShape(_ shape: Shape.RawValue) {
+        print("create shape")
+        let image = UIImageView(image: UIImage(named: shape))
+        delegate?.addShapeToButton(image)
+    }
 }

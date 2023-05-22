@@ -20,6 +20,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let segmentedMainEditorView = SegmentedMainEditorView()
     let leftMainEditorView = LeftMainEditorView()
     let rightMainEditorView = RightMainEditorView()
+    //image that we add from addButton (from rightMainEditorView)
+    var shapeImage = UIImageView()
     let toolEditorView = ToolEditorView() //when a tool is chosen - didnt add to subview now and didnt call the function for the setup
 
     var presenter: DrawingPresenterProtocol!
@@ -171,6 +173,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     private func setupRightEditorView() {
         rightMainEditorView.translatesAutoresizingMaskIntoConstraints = false
         rightMainEditorView.delegate = self
+        rightMainEditorView.presentationDelegate = self
         view.addSubview(rightMainEditorView)
         
         NSLayoutConstraint.activate([
@@ -300,6 +303,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("clear all")
         canvasView.drawing = PKDrawing()
         textViewContainer.removeFromSuperview()
+        shapeImage.removeFromSuperview()
     }
     
 //MARK: - colorWheel will update tool's tip color
@@ -430,5 +434,28 @@ extension DrawingViewController: MainEditorDelegate {
         if let editedImage = self.createFullImage(drawingLayer: drawing) {
             UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)
         }
+    }
+}
+
+extension DrawingViewController: PresentationViewDelegate {
+    func addImageToViewController(_ image: UIImageView) {
+        print("add image to vc")
+        print(image.image == nil)
+        shapeImage = image
+        setupShapeImage(shapeImage)
+    }
+    
+    private func setupShapeImage(_ shape: UIImageView) {
+        print("set up shape image")
+        shape.translatesAutoresizingMaskIntoConstraints = false
+        shape.tintColor = .white
+        shape.contentMode = .scaleAspectFit
+        canvasView.addSubview(shape)
+        
+        NSLayoutConstraint.activate([
+            shape.topAnchor.constraint(equalTo: canvasView.topAnchor, constant: 10),
+            shape.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 50),
+            shape.widthAnchor.constraint(equalTo: canvasView.widthAnchor, multiplier: 0.2)
+        ])
     }
 }

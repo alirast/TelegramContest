@@ -7,13 +7,7 @@
 
 import UIKit
 
-protocol MainEditorDelegate: AnyObject {
-    func chooseDrawOrText(_ sender: UISegmentedControl)
-    func saveImageToPhotos()
-}
-
-
-class SegmentedMainEditorView: UIView, ContextMenuViewDelegate {
+class SegmentedMainEditorView: UIView {
     
     weak var delegate: MainEditorDelegate?
     

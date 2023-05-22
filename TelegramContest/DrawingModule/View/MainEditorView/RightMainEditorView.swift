@@ -11,6 +11,8 @@ class RightMainEditorView: UIView, ContextMenuViewDelegate {
     
     weak var delegate: MainEditorDelegate?
     
+    weak var presentationDelegate: PresentationViewDelegate?
+    
     var contextMenu = ContextMenuView()
     
     lazy var addButton: UIButton = {
@@ -40,6 +42,8 @@ class RightMainEditorView: UIView, ContextMenuViewDelegate {
         addSubview(addButton)
         addSubview(downloadButton)
         
+        contextMenu.delegate = self
+        
         NSLayoutConstraint.activate([
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             addButton.bottomAnchor.constraint(equalTo: downloadButton.topAnchor, constant: -5),
@@ -60,5 +64,11 @@ class RightMainEditorView: UIView, ContextMenuViewDelegate {
     @objc func saveImage() {
         print("saving image")
         delegate?.saveImageToPhotos()
+    }
+    
+    func addShapeToButton(_ image: UIImageView) {
+        print("add shape to button")
+        print(image.image == nil)
+        presentationDelegate?.addImageToViewController(image)
     }
 }
