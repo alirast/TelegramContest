@@ -100,11 +100,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         super.viewDidAppear(animated)
         //our toolPicker - not system
     }
-//MARK: - methods
-    func save(_ sender: Any) {
-        //save ready image with drawing
-    }
     
+//MARK: - methods    
     //protocol method
     func setPhoto(photo: PHAsset?) {
         photo?.convertToImage(completion: { image in

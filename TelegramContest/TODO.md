@@ -19,7 +19,7 @@ done button removes keyboard. something else?
 clear all clears canvas view and text view. something else?
 +color wheel need transfer the color in chosen tool and chosen tool should show chosen color
 selected tool should be = system tool (our tools = system pk tools)
-animation for selected tool?
++animation for selected tool?
 +?color of text in text view? white?
 tapping 2 times on the tool should show tool editor view
 tapping 1 time on the tool show animation or tool higher
@@ -31,4 +31,9 @@ today
 
 accidential scrolling of text view remove
 segmented control fix (need didset?)
+
+color from selected tool to system tool
+connection of system tool to custom tool
+adding different views from addbutton
+
 
