@@ -53,6 +53,7 @@
 		4FCEE4E229CE162D000232C2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4FCEE4E129CE162D000232C2 /* Lottie */; };
 		4FCEE4E429CE1713000232C2 /* duck.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEE4E329CE1713000232C2 /* duck.json */; };
 		4FEDD3872A1CC3E600FED10F /* UIViewTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDD3862A1CC3E600FED10F /* UIViewTransformation.swift */; };
+		4FEDD38D2A1D1C4000FED10F /* DrawingVCToolWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDD38C2A1D1C4000FED10F /* DrawingVCToolWidth.swift */; };
 		4FF2E87329E494E3002F9FF3 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		4FCEE4E329CE1713000232C2 /* duck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duck.json; sourceTree = "<group>"; };
 		4FD1B9B329F1886B0092012C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		4FEDD3862A1CC3E600FED10F /* UIViewTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTransformation.swift; sourceTree = "<group>"; };
+		4FEDD38C2A1D1C4000FED10F /* DrawingVCToolWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingVCToolWidth.swift; sourceTree = "<group>"; };
 		4FF2E87229E494E3002F9FF3 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,11 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
-				4F1453022A1B5C6B00C8258B /* ShapeRectangleView.swift */,
-				4F1453042A1B5D6900C8258B /* ShapeEllipseView.swift */,
-				4F1453062A1B5E3400C8258B /* ShapeBubbleView.swift */,
-				4F1453082A1B5F3E00C8258B /* ShapeStarView.swift */,
-				4F14530A2A1B600300C8258B /* ShapeArrowView.swift */,
+				4FEDD3882A1CC4B500FED10F /* ContextMenuShapes */,
 			);
 			path = ContextMenu;
 			sourceTree = "<group>";
@@ -216,6 +214,7 @@
 				4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */,
 				4F0439D12A1BDBFE00C37990 /* ImageViewTransformation.swift */,
 				4FEDD3862A1CC3E600FED10F /* UIViewTransformation.swift */,
+				4FEDD38C2A1D1C4000FED10F /* DrawingVCToolWidth.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,7 +329,7 @@
 			children = (
 				4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
-				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
+				4FEDD38B2A1D181700FED10F /* ToolEditorViewWidth */,
 				4F1453012A1B5BD100C8258B /* ContextMenu */,
 				4FBF320F2A1A33F200B85D0D /* MainEditorView */,
 				4FBF32102A1A343900B85D0D /* CustomViewSetup */,
@@ -381,6 +380,26 @@
 				4FCEE4DE29CE14BF000232C2 /* AccessView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4FEDD3882A1CC4B500FED10F /* ContextMenuShapes */ = {
+			isa = PBXGroup;
+			children = (
+				4F1453022A1B5C6B00C8258B /* ShapeRectangleView.swift */,
+				4F1453042A1B5D6900C8258B /* ShapeEllipseView.swift */,
+				4F1453062A1B5E3400C8258B /* ShapeBubbleView.swift */,
+				4F1453082A1B5F3E00C8258B /* ShapeStarView.swift */,
+				4F14530A2A1B600300C8258B /* ShapeArrowView.swift */,
+			);
+			path = ContextMenuShapes;
+			sourceTree = "<group>";
+		};
+		4FEDD38B2A1D181700FED10F /* ToolEditorViewWidth */ = {
+			isa = PBXGroup;
+			children = (
+				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
+			);
+			path = ToolEditorViewWidth;
 			sourceTree = "<group>";
 		};
 		4FF2E87129E494CD002F9FF3 /* DrawingVC */ = {
@@ -490,6 +509,7 @@
 				4F0439CC2A1BBC0900C37990 /* PresentationViewDelegate.swift in Sources */,
 				4F0439CE2A1BCB4C00C37990 /* MainEditorDelegate.swift in Sources */,
 				4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */,
+				4FEDD38D2A1D1C4000FED10F /* DrawingVCToolWidth.swift in Sources */,
 				4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,

@@ -13,7 +13,7 @@ extension UIView {
         addGestureRecognizer(panGesture)
     }
     
-    @objc func enableZoom(_ sender: UIPanGestureRecognizer) {
+    @objc private func enableZoom(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: superview)
         center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
         sender.setTranslation(.zero, in: superview)

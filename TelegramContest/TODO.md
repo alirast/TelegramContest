@@ -37,3 +37,5 @@ connection of system tool to custom tool
 
 delete separate shape views from context menu? (they're not necessary)
 
+context menu shapes delete(???)
+tool editor view width delete(???)

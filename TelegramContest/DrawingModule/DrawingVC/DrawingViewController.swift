@@ -45,11 +45,14 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - tools
     var selectedTool = Tool()
     
+    var systemPen = PKInkingTool.InkType.pen
+    
     let pen = Tool(toolBody: "pen", toolTip: "penTip")
     let pencil = Tool(toolBody: "pencil", toolTip: "pencilTip")
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
     let brush = Tool(toolBody: "brush", toolTip: "brushTip")
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
+    
 //MARK: - segment
 //FIXME: - the same is in the main editor view
     /*var currentSegment: DrawOrText = .draw {
@@ -66,6 +69,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //initial color for selectedTool + initally selectedTool is pen
         selectedTool = pen
         selectedTool.toolTipImage.tintColor = leftMainEditorView.colorWheel.selectedColor
+        setSystemTool()
         
         presenter.setPhoto()
         
@@ -209,7 +213,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         eraser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(eraserTapped)))
         lasso.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(lassoTapped)))
         
-        
         //added to view (were on canvas view) because we will save canvas view to gallery
         view.addSubview(pen)
         view.addSubview(pencil)
@@ -312,34 +315,64 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
 //MARK: - tools' methods
+    func setSystemTool() {
+        switch selectedTool {
+        case pen:
+            //canvasView.tool = systemPen as! any PKTool
+            print(selectedTool)
+            print(canvasView.tool)
+        default:
+            break
+        }
+    }
     @objc func penTapped() {
         print("tool tapped")
         selectedTool = pen
         print(selectedTool)
+//FIXME: - color changing!
+        canvasView.tool = PKInkingTool(.pen, color: selectedTool.toolTipImage.tintColor, width: 30)
+        let interaction = UIContextMenuInteraction(delegate: self)
+        pen.addInteraction(interaction)
     }
     
     @objc func pencilTapped() {
         print("pencil tapped")
         selectedTool = pencil
         print(selectedTool)
+//FIXME: - color changing!
+        canvasView.tool = PKInkingTool(.pencil, color: selectedTool.toolTipImage.tintColor, width: 20)
+        let interaction = UIContextMenuInteraction(delegate: self)
+        pencil.addInteraction(interaction)
     }
     
     @objc func brushTapped() {
         print("brush tapped")
         selectedTool = brush
         print(selectedTool)
+//FIXME: - color changing!
+        canvasView.tool = PKInkingTool(.marker, color: selectedTool.toolTipImage.tintColor, width: 20)
+        let interaction = UIContextMenuInteraction(delegate: self)
+        brush.addInteraction(interaction)
     }
     
     @objc func eraserTapped() {
         print("eraser tapped")
         selectedTool = eraser
         print(selectedTool)
+        
+        if #available(iOS 16.4, *) {
+            canvasView.tool = PKEraserTool(.bitmap, width: 20)
+        } else {
+            canvasView.tool = PKEraserTool(.bitmap)
+        }
     }
     
     @objc func lassoTapped() {
         print("lasso tapped")
         selectedTool = lasso
         print(selectedTool)
+//FIXME: - what it should do?
+        canvasView.tool = PKLassoTool()
     }
     
 //MARK: - textViewMethods
@@ -464,3 +497,5 @@ extension DrawingViewController: PresentationViewDelegate {
         ])
     }
 }
+
+
