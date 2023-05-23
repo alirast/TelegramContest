@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImageView {
-    func zoom() {
+    func zoomImage() {
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(enableZooming(_:)))
         isUserInteractionEnabled = true
         addGestureRecognizer(pinchGesture)

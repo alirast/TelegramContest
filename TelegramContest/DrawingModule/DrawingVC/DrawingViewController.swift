@@ -451,7 +451,7 @@ extension DrawingViewController: PresentationViewDelegate {
         shape.tintColor = .white
         shape.contentMode = .scaleAspectFit
         
-        shape.zoom()
+        shape.zoomImage()
         shape.changePosition()
         shape.rotate()
         

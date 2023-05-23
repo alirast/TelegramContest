@@ -30,24 +30,13 @@ class TextView: UIView {
         super.init(frame: frame)
         
         addSubview(textView)
-        addPanGesture()
+        zoom()
         setupNotificationCenter()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         textView.frame.size.height = textView.contentSize.height
-    }
-    
-    private func addPanGesture() {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        addGestureRecognizer(panGesture)
-    }
-    
-    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: superview)
-        center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
-        gesture.setTranslation(.zero, in: superview)
     }
     
     func setText(_ text: String) {
