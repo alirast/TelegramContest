@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F0439CC2A1BBC0900C37990 /* PresentationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439CB2A1BBC0900C37990 /* PresentationViewDelegate.swift */; };
 		4F0439CE2A1BCB4C00C37990 /* MainEditorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439CD2A1BCB4C00C37990 /* MainEditorDelegate.swift */; };
-		4F0439D22A1BDBFE00C37990 /* ImageViewZoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439D12A1BDBFE00C37990 /* ImageViewZoomable.swift */; };
+		4F0439D22A1BDBFE00C37990 /* ImageViewTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0439D12A1BDBFE00C37990 /* ImageViewTransformation.swift */; };
 		4F04DA452A13CC8D00CBBAC2 /* SizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04DA442A13CC8D00CBBAC2 /* SizeManager.swift */; };
 		4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */; };
 		4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */; };
@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		4F0439CB2A1BBC0900C37990 /* PresentationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewDelegate.swift; sourceTree = "<group>"; };
 		4F0439CD2A1BCB4C00C37990 /* MainEditorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditorDelegate.swift; sourceTree = "<group>"; };
-		4F0439D12A1BDBFE00C37990 /* ImageViewZoomable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewZoomable.swift; sourceTree = "<group>"; };
+		4F0439D12A1BDBFE00C37990 /* ImageViewTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewTransformation.swift; sourceTree = "<group>"; };
 		4F04DA442A13CC8D00CBBAC2 /* SizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeManager.swift; sourceTree = "<group>"; };
 		4F051BBC29DC6FCE005F223A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F0E19C529E71AD90042125A /* PhotoGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPresenter.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 			children = (
 				4F04DA442A13CC8D00CBBAC2 /* SizeManager.swift */,
 				4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */,
-				4F0439D12A1BDBFE00C37990 /* ImageViewZoomable.swift */,
+				4F0439D12A1BDBFE00C37990 /* ImageViewTransformation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 				4FC5C9BC29E05049009A351B /* ContextMenuView.swift in Sources */,
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
 				4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */,
-				4F0439D22A1BDBFE00C37990 /* ImageViewZoomable.swift in Sources */,
+				4F0439D22A1BDBFE00C37990 /* ImageViewTransformation.swift in Sources */,
 				4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */,
 				4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */,
 				4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */,

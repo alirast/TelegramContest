@@ -450,12 +450,15 @@ extension DrawingViewController: PresentationViewDelegate {
         shape.translatesAutoresizingMaskIntoConstraints = false
         shape.tintColor = .white
         shape.contentMode = .scaleAspectFit
-//TODO: - check on phone
+        
         shape.zoom()
+        shape.changePosition()
+        shape.rotate()
+        
         canvasView.addSubview(shape)
         
         NSLayoutConstraint.activate([
-            shape.topAnchor.constraint(equalTo: canvasView.topAnchor, constant: 10),
+            shape.topAnchor.constraint(equalTo: canvasView.topAnchor, constant: CGFloat(arc4random_uniform(300))),
             shape.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 50),
             shape.widthAnchor.constraint(equalTo: canvasView.widthAnchor, multiplier: 0.2)
         ])

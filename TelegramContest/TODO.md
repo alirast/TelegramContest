@@ -34,8 +34,6 @@ segmented control fix (need didset?)
 
 color from selected tool to system tool
 connection of system tool to custom tool
-+adding different views from addbutton
-these views should be zoomable and change position with the tap
-delete separate shape views from context menu? (they're not necessary)
 
+delete separate shape views from context menu? (they're not necessary)
 
