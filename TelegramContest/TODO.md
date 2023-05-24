@@ -32,10 +32,3 @@ today
 accidential scrolling of text view remove
 segmented control fix (need didset?)
 
-color from selected tool to system tool
-connection of system tool to custom tool
-
-delete separate shape views from context menu? (they're not necessary)
-
-context menu shapes delete(???)
-tool editor view width delete(???)

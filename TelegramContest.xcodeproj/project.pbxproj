@@ -16,11 +16,6 @@
 		4F13BB7A29D5E8A700901944 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */; };
 		4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7B29D5E9BF00901944 /* Router.swift */; };
 		4F13BB7E29D5EB9400901944 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */; };
-		4F1453032A1B5C6B00C8258B /* ShapeRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453022A1B5C6B00C8258B /* ShapeRectangleView.swift */; };
-		4F1453052A1B5D6900C8258B /* ShapeEllipseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453042A1B5D6900C8258B /* ShapeEllipseView.swift */; };
-		4F1453072A1B5E3400C8258B /* ShapeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453062A1B5E3400C8258B /* ShapeBubbleView.swift */; };
-		4F1453092A1B5F3E00C8258B /* ShapeStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453082A1B5F3E00C8258B /* ShapeStarView.swift */; };
-		4F14530B2A1B600300C8258B /* ShapeArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14530A2A1B600300C8258B /* ShapeArrowView.swift */; };
 		4F14D85729F57AFE00F16CC2 /* SegmentedMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85629F57AFE00F16CC2 /* SegmentedMainEditorView.swift */; };
 		4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */; };
 		4F3768E62A09575300246824 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3768E52A09575300246824 /* TextView.swift */; };
@@ -31,7 +26,6 @@
 		4F5C380929F6E355000BB670 /* PhotoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */; };
 		4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */; };
 		4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */; };
-		4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */; };
 		4F94DE5D29FFFECF00E30266 /* ContextMenuProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94DE5C29FFFECF00E30266 /* ContextMenuProtocol.swift */; };
 		4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */; };
 		4FA3C15729ED4B7700CF75D5 /* PhotoGridModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15629ED4B7700CF75D5 /* PhotoGridModuleProtocols.swift */; };
@@ -67,11 +61,6 @@
 		4F13BB7929D5E8A700901944 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		4F13BB7B29D5E9BF00901944 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4F13BB7D29D5EB9400901944 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
-		4F1453022A1B5C6B00C8258B /* ShapeRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeRectangleView.swift; sourceTree = "<group>"; };
-		4F1453042A1B5D6900C8258B /* ShapeEllipseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeEllipseView.swift; sourceTree = "<group>"; };
-		4F1453062A1B5E3400C8258B /* ShapeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBubbleView.swift; sourceTree = "<group>"; };
-		4F1453082A1B5F3E00C8258B /* ShapeStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStarView.swift; sourceTree = "<group>"; };
-		4F14530A2A1B600300C8258B /* ShapeArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeArrowView.swift; sourceTree = "<group>"; };
 		4F14D85629F57AFE00F16CC2 /* SegmentedMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedMainEditorView.swift; sourceTree = "<group>"; };
 		4F14D85829F57CA700F16CC2 /* RoundSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentedControl.swift; sourceTree = "<group>"; };
 		4F3768E52A09575300246824 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -82,7 +71,6 @@
 		4F5C380829F6E355000BB670 /* PhotoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceProtocol.swift; sourceTree = "<group>"; };
 		4F5C380B29F6E5F0000BB670 /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
 		4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerView.swift; sourceTree = "<group>"; };
-		4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolEditorView.swift; sourceTree = "<group>"; };
 		4F94DE5C29FFFECF00E30266 /* ContextMenuProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuProtocol.swift; sourceTree = "<group>"; };
 		4FA3C15329ED4AAB00CF75D5 /* AccessModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModuleProtocols.swift; sourceTree = "<group>"; };
 		4FA3C15629ED4B7700CF75D5 /* PhotoGridModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridModuleProtocols.swift; sourceTree = "<group>"; };
@@ -153,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				4FC5C9BB29E05049009A351B /* ContextMenuView.swift */,
-				4FEDD3882A1CC4B500FED10F /* ContextMenuShapes */,
 			);
 			path = ContextMenu;
 			sourceTree = "<group>";
@@ -329,7 +316,6 @@
 			children = (
 				4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
-				4FEDD38B2A1D181700FED10F /* ToolEditorViewWidth */,
 				4F1453012A1B5BD100C8258B /* ContextMenu */,
 				4FBF320F2A1A33F200B85D0D /* MainEditorView */,
 				4FBF32102A1A343900B85D0D /* CustomViewSetup */,
@@ -380,26 +366,6 @@
 				4FCEE4DE29CE14BF000232C2 /* AccessView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4FEDD3882A1CC4B500FED10F /* ContextMenuShapes */ = {
-			isa = PBXGroup;
-			children = (
-				4F1453022A1B5C6B00C8258B /* ShapeRectangleView.swift */,
-				4F1453042A1B5D6900C8258B /* ShapeEllipseView.swift */,
-				4F1453062A1B5E3400C8258B /* ShapeBubbleView.swift */,
-				4F1453082A1B5F3E00C8258B /* ShapeStarView.swift */,
-				4F14530A2A1B600300C8258B /* ShapeArrowView.swift */,
-			);
-			path = ContextMenuShapes;
-			sourceTree = "<group>";
-		};
-		4FEDD38B2A1D181700FED10F /* ToolEditorViewWidth */ = {
-			isa = PBXGroup;
-			children = (
-				4F794EAF29F82E7C007F3EB9 /* ToolEditorView.swift */,
-			);
-			path = ToolEditorViewWidth;
 			sourceTree = "<group>";
 		};
 		4FF2E87129E494CD002F9FF3 /* DrawingVC */ = {
@@ -489,11 +455,9 @@
 			files = (
 				4F14D85729F57AFE00F16CC2 /* SegmentedMainEditorView.swift in Sources */,
 				4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */,
-				4F1453072A1B5E3400C8258B /* ShapeBubbleView.swift in Sources */,
 				4F13BB7C29D5E9BF00901944 /* Router.swift in Sources */,
 				4F04DA452A13CC8D00CBBAC2 /* SizeManager.swift in Sources */,
 				4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */,
-				4F14530B2A1B600300C8258B /* ShapeArrowView.swift in Sources */,
 				4FA3C15A29ED4D7700CF75D5 /* DrawingModuleProtocols.swift in Sources */,
 				4FA3C16329ED54B900CF75D5 /* ModuleBuilderProtocol.swift in Sources */,
 				4FCEE4DF29CE14BF000232C2 /* AccessView.swift in Sources */,
@@ -508,17 +472,13 @@
 				4F794E8C29F809AB007F3EB9 /* GradientLayerView.swift in Sources */,
 				4F0439CC2A1BBC0900C37990 /* PresentationViewDelegate.swift in Sources */,
 				4F0439CE2A1BCB4C00C37990 /* MainEditorDelegate.swift in Sources */,
-				4F794EB029F82E7C007F3EB9 /* ToolEditorView.swift in Sources */,
 				4FEDD38D2A1D1C4000FED10F /* DrawingVCToolWidth.swift in Sources */,
 				4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */,
 				4F14D85929F57CA700F16CC2 /* RoundSegmentedControl.swift in Sources */,
 				4FCEE4CA29CE0F5F000232C2 /* AppDelegate.swift in Sources */,
-				4F1453092A1B5F3E00C8258B /* ShapeStarView.swift in Sources */,
 				4F4A571629FD837C00B7347B /* CustomSlider.swift in Sources */,
 				4FA3C15729ED4B7700CF75D5 /* PhotoGridModuleProtocols.swift in Sources */,
-				4F1453052A1B5D6900C8258B /* ShapeEllipseView.swift in Sources */,
 				4FA3C15429ED4AAB00CF75D5 /* AccessModuleProtocols.swift in Sources */,
-				4F1453032A1B5C6B00C8258B /* ShapeRectangleView.swift in Sources */,
 				4F577E2729F448C100ADF032 /* Tool.swift in Sources */,
 				4F0E19C629E71AD90042125A /* PhotoGridPresenter.swift in Sources */,
 				4F5C380929F6E355000BB670 /* PhotoServiceProtocol.swift in Sources */,

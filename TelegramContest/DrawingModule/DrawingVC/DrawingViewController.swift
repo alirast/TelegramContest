@@ -22,7 +22,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     let rightMainEditorView = RightMainEditorView()
     //image that we add from addButton (from rightMainEditorView)
     var shapeImage = UIImageView()
-    let toolEditorView = ToolEditorView() //when a tool is chosen - didnt add to subview now and didnt call the function for the setup
 
     var presenter: DrawingPresenterProtocol!
     
@@ -178,16 +177,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             rightMainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             rightMainEditorView.topAnchor.constraint(equalTo: rightMainEditorView.addButton.topAnchor),
             rightMainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
-        ])
-    }
-    
-    private func setupToolEditorView() {
-        toolEditorView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            toolEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            toolEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            toolEditorView.topAnchor.constraint(equalTo: view.topAnchor),
-            toolEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
     
