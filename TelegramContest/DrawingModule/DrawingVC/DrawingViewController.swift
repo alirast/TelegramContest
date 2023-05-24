@@ -29,7 +29,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     private let canvasView: PKCanvasView = {
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
-        //canvas.tool = PKInkingTool(.marker, color: .red, width: 10)
         return canvas
     }()
     
@@ -45,32 +44,20 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - tools
     var selectedTool = Tool()
     
-    var systemPen = PKInkingTool.InkType.pen
-    
     let pen = Tool(toolBody: "pen", toolTip: "penTip")
     let pencil = Tool(toolBody: "pencil", toolTip: "pencilTip")
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
     let brush = Tool(toolBody: "brush", toolTip: "brushTip")
     let lasso = Tool(toolBody: "lasso", toolTip: nil)
     
-//MARK: - segment
-//FIXME: - the same is in the main editor view
-    /*var currentSegment: DrawOrText = .draw {
-        didSet {
-            segmentDrawOrText()
-        }
-    }*/
 //MARK: - textView
     private var textViewContainer = TextView()
     private var textSlider: CustomSlider!
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-//initial color for selectedTool + initally selectedTool is pen
-        selectedTool = pen
-        selectedTool.toolTipImage.tintColor = leftMainEditorView.colorWheel.selectedColor
-        setSystemTool()
-        
+        canvasView.tool = PKInkingTool(.pen, color: .white)
+       
         presenter.setPhoto()
         
         initialSetupNavigationBar()
@@ -311,26 +298,29 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
 //MARK: - colorWheel will update tool's tip color
     @objc func changingColor(sender: UIColorWell) {
-        selectedTool.toolTipImage.tintColor = sender.selectedColor
-    }
+        guard let selectedColor = sender.selectedColor else { return }
+        selectedTool.toolTipImage.tintColor = selectedColor
     
-//MARK: - tools' methods
-    func setSystemTool() {
         switch selectedTool {
         case pen:
-            //canvasView.tool = systemPen as! any PKTool
-            print(selectedTool)
-            print(canvasView.tool)
+            canvasView.tool = PKInkingTool(.pen, color: selectedColor)
+        case pencil:
+            canvasView.tool = PKInkingTool(.pencil, color: selectedColor)
+        case brush:
+            canvasView.tool = PKInkingTool(.marker, color: selectedColor)
         default:
             break
         }
     }
+    
+//MARK: - tools' methods
+
     @objc func penTapped() {
-        print("tool tapped")
+        print("pen tapped")
         selectedTool = pen
         print(selectedTool)
-//FIXME: - color changing!
-        canvasView.tool = PKInkingTool(.pen, color: selectedTool.toolTipImage.tintColor, width: 30)
+
+        canvasView.tool = PKInkingTool(.pen)
         let interaction = UIContextMenuInteraction(delegate: self)
         pen.addInteraction(interaction)
     }
@@ -339,8 +329,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("pencil tapped")
         selectedTool = pencil
         print(selectedTool)
-//FIXME: - color changing!
-        canvasView.tool = PKInkingTool(.pencil, color: selectedTool.toolTipImage.tintColor, width: 20)
+
+        canvasView.tool = PKInkingTool(.pencil)
         let interaction = UIContextMenuInteraction(delegate: self)
         pencil.addInteraction(interaction)
     }
@@ -349,8 +339,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("brush tapped")
         selectedTool = brush
         print(selectedTool)
-//FIXME: - color changing!
-        canvasView.tool = PKInkingTool(.marker, color: selectedTool.toolTipImage.tintColor, width: 20)
+
+        canvasView.tool = PKInkingTool(.marker)
         let interaction = UIContextMenuInteraction(delegate: self)
         brush.addInteraction(interaction)
     }
