@@ -403,13 +403,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
 //call when switch to index 1 on the segmented control
     private func setupTextView() {
-        textViewContainer.textView.backgroundColor = .green
+        textViewContainer.textView.backgroundColor = .lightText
         textViewContainer.setText("Write here...")
         
         canvasView.addSubview(textViewContainer)
-  
-        //textViewContainer.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
-        //textViewContainer.center = CGPoint(x: canvasView.center.x, y: canvasView.center.y)
         
         textViewContainer.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -68,7 +68,7 @@ class TextView: UIView {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {
             textView.text = nil
-            textView.textColor = .white
+            textView.textColor = .black
         }
     }
     
