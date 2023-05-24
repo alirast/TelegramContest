@@ -44,6 +44,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - tools
     var selectedTool = Tool()
     
+    var toolWidth: CGFloat = 0
+    var toolColor: UIColor = .red
+    
     let pen = Tool(toolBody: "pen", toolTip: "penTip")
     let pencil = Tool(toolBody: "pencil", toolTip: "pencilTip")
     let eraser = Tool(toolBody: "eraser", toolTip: nil)
@@ -56,7 +59,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        canvasView.tool = PKInkingTool(.pen, color: .white)
+        //initial tool width is 0
+        canvasView.tool = PKInkingTool(.pen, color: toolColor, width: toolWidth)
+        print("initial tool width", toolWidth)
+        print("initial tool color", toolColor)
        
         presenter.setPhoto()
         
@@ -299,28 +305,48 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 //MARK: - colorWheel will update tool's tip color
     @objc func changingColor(sender: UIColorWell) {
         guard let selectedColor = sender.selectedColor else { return }
-        selectedTool.toolTipImage.tintColor = selectedColor
-    
+        toolColor = selectedColor
+        selectedTool.toolTipImage.tintColor = toolColor
+//TODO: - here should be width
         switch selectedTool {
         case pen:
-            canvasView.tool = PKInkingTool(.pen, color: selectedColor)
+            canvasView.tool = PKInkingTool(.pen, color: toolColor)
+            print("changed color", toolColor)
         case pencil:
-            canvasView.tool = PKInkingTool(.pencil, color: selectedColor)
+            canvasView.tool = PKInkingTool(.pencil, color: toolColor)
+            print("changed color", toolColor)
         case brush:
-            canvasView.tool = PKInkingTool(.marker, color: selectedColor)
+            canvasView.tool = PKInkingTool(.marker, color: toolColor)
+            print("changed color", toolColor)
         default:
             break
         }
     }
     
 //MARK: - tools' methods
+    func setupWidth(_ width: CGFloat?) {
+        switch selectedTool {
+        case pen:
+            canvasView.tool = PKInkingTool(.pen, color: toolColor, width: width)
+            print("set up tool width with color", toolColor)
+        case pencil:
+            canvasView.tool = PKInkingTool(.pencil, color: toolColor, width: width)
+            print("set up tool width with color", toolColor)
+        case brush:
+            canvasView.tool = PKInkingTool(.marker, color: toolColor, width: width)
+            print("set up tool width with color", toolColor)
+        default:
+            break
+        }
+    }
 
     @objc func penTapped() {
         print("pen tapped")
         selectedTool = pen
         print(selectedTool)
-
         canvasView.tool = PKInkingTool(.pen)
+        print("final pen width", toolWidth)
+        print("final pen color", toolColor)
         let interaction = UIContextMenuInteraction(delegate: self)
         pen.addInteraction(interaction)
     }
@@ -331,6 +357,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print(selectedTool)
 
         canvasView.tool = PKInkingTool(.pencil)
+        print("final pencil width", toolWidth)
+        print("final pencil color", toolColor)
+        
         let interaction = UIContextMenuInteraction(delegate: self)
         pencil.addInteraction(interaction)
     }
@@ -341,6 +370,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print(selectedTool)
 
         canvasView.tool = PKInkingTool(.marker)
+        print("final brush width", toolWidth)
+        print("final brush color", toolColor)
+        
         let interaction = UIContextMenuInteraction(delegate: self)
         brush.addInteraction(interaction)
     }
@@ -361,7 +393,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         print("lasso tapped")
         selectedTool = lasso
         print(selectedTool)
-//FIXME: - what it should do?
         canvasView.tool = PKLassoTool()
     }
     
