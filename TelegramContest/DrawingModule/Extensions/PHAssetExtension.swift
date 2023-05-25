@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+
 extension PHAsset {
     func convertToImage(completion: @escaping (_ image: UIImage?) -> Void) {
         let manager = PHImageManager.default()

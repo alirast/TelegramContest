@@ -11,9 +11,6 @@ class SegmentedMainEditorView: UIView {
     
     weak var delegate: MainEditorDelegate?
     
-    
-    //var currentSegment: DrawOrText = .draw
-    
     lazy var drawOrTextSegmentedControl: RoundSegmentedControl = {
         let segmentedControl = RoundSegmentedControl(items: ["Draw", "Text"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false

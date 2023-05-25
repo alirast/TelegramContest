@@ -8,7 +8,8 @@
 import Foundation
 import Photos
 
-//photoService protocol
-protocol PhotoServiceProtocol {
-    func getPhotos(completion: @escaping ([PHAsset]) -> Void)
+protocol ServiceProtocol {
+    func getPictures(completion: @escaping ([PHAsset]) -> Void)
 }
+
+

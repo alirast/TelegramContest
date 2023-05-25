@@ -20,7 +20,6 @@ class Router: RouterProtocol {
     func showAccessViewController() {
         if let navigationController = navigationController {
             guard let accessViewController = moduleBuilder?.createAccessModule(router: self) else { return }
-//FIXME: - remove the accessViewController from the stack. Create stack from photoGridVC. because don't need back button on photoGridVC
             navigationController.viewControllers = [accessViewController]
         }
     }
@@ -31,6 +30,7 @@ class Router: RouterProtocol {
             navigationController.pushViewController(photoGridViewController, animated: true)
         }
     }
+    
     func showDrawingView(photo: PHAsset?) {
         if let navigationController = navigationController {
             guard let drawingViewController = moduleBuilder?.createDrawingModule(photo: photo, router: self) else { return }
@@ -38,5 +38,3 @@ class Router: RouterProtocol {
         }
     }
 }
-
-

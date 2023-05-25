@@ -12,7 +12,6 @@ class LeftMainEditorView: UIView {
         let colorWheel = UIColorWell()
         colorWheel.translatesAutoresizingMaskIntoConstraints = false
         colorWheel.title = "Colors"
-        //colorWheel.addTarget
         return colorWheel
     }()
     

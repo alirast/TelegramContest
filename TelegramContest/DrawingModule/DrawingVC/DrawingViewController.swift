@@ -12,7 +12,6 @@ import Photos
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingViewProtocol {
     
     //navigation buttons
-//TODO: - separate buttons to view
     let undoNavigationBarImage = UIImage(named: "undo")?.withRenderingMode(.alwaysTemplate)
     let clearAllNavigationBarButton = UIBarButtonItem(title: "Clear All", style: .plain, target: nil, action: nil)
     let doneTextNavigationBarButton = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: nil)
@@ -81,9 +80,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         setupLeftEditorView()
         setupToolMainViewConstraints()
         initialSetupMainEditorView()
-
     }
-    
 
 //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
@@ -91,12 +88,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         guard let image = imageForDrawing.image else { return }
         canvasView.frame = SizeManager.setSize(image, toFitIn: imageForDrawing)
-    }
-    
-//MARK: - viewDidAppear
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //our toolPicker - not system
     }
     
 //MARK: - methods    
@@ -107,9 +98,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
                 self.imageForDrawing.image = image
             }
         })
-        //imageForDrawing.image = photo
     }
-    
+//MARK: - navigationBar
     private func initialSetupNavigationBar() {
         //color for navigation bar and safe
         let appearance = UINavigationBarAppearance()
@@ -137,9 +127,9 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         navigationItem.rightBarButtonItems = [clearAllNavigationBarButton, doneTextNavigationBarButton]
         
     }
-    
+
+//MARK: - MainEditorView
     private func initialSetupMainEditorView() {
-//FIXME: - should be foreground - not on the view or remove colors for canvas view  - opacity + top anchor (fixed)
         segmentedMainEditorView.delegate = self
         segmentedMainEditorView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedMainEditorView)
@@ -152,6 +142,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         ])
     }
     
+//MARK: - LeftEditorView
     private func setupLeftEditorView() {
         leftMainEditorView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(leftMainEditorView)
@@ -165,7 +156,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             leftMainEditorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
-    
+
+//MARK: - RightEditorView
     private func setupRightEditorView() {
         rightMainEditorView.translatesAutoresizingMaskIntoConstraints = false
         rightMainEditorView.delegate = self
@@ -180,6 +172,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         ])
     }
     
+//MARK: - ToolMainView
     private func setupToolMainViewConstraints() {
         pen.translatesAutoresizingMaskIntoConstraints = false
         pencil.translatesAutoresizingMaskIntoConstraints = false
@@ -229,7 +222,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
             eraser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
     }
-    
+
+//MARK: - GradientView
     private func setupGradientView() {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
@@ -241,6 +235,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         ])
     }
     
+//MARK: - ContainerView + subview
     private func setupContainerView() {
         containerView.backgroundColor = .clear
         view.addSubview(containerView)
@@ -269,15 +264,15 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         ])
     }
 
+//MARK: - CanvasView
     private func setupCanvasView() {
         canvasView.backgroundColor = .clear
         canvasView.drawing = drawing
         canvasView.delegate = self
         containerView.addSubview(canvasView)
-        
-
     }
-    
+
+//MARK: - navigation buttons
     @objc private func undoTapped() {
         print("undo tapped")
         //go back to second screen through presenter
@@ -296,7 +291,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         guard let selectedColor = sender.selectedColor else { return }
         toolColor = selectedColor
         selectedTool.toolTipImage.tintColor = toolColor
-//TODO: - here should be width
+
         switch selectedTool {
         case pen:
             canvasView.tool = PKInkingTool(.pen, color: toolColor)

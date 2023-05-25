@@ -16,7 +16,6 @@ final class Tool: UIView {
         toolBodyImage.image = UIImage(named: toolBody)
         toolBodyImage.isUserInteractionEnabled = true
         toolTipImage.image = UIImage(named: toolTip ?? "")?.withRenderingMode(.alwaysTemplate)
-        //toolTipImage.tintColor = editor.colorWheel.selectedColor
         addSubview(toolBodyImage)
         addSubview(toolTipImage)
         

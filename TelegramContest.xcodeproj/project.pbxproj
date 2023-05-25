@@ -33,7 +33,6 @@
 		4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */; };
 		4FA3C15F29ED526700CF75D5 /* RouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */; };
 		4FA3C16329ED54B900CF75D5 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */; };
-		4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */; };
 		4FA72F2829D2078600172B4B /* AccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA72F2729D2078600172B4B /* AccessPresenter.swift */; };
 		4FBF32122A1A348700B85D0D /* LeftMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF32112A1A348700B85D0D /* LeftMainEditorView.swift */; };
 		4FBF32142A1A367000B85D0D /* RightMainEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF32132A1A367000B85D0D /* RightMainEditorView.swift */; };
@@ -78,7 +77,6 @@
 		4FA3C15C29ED4EC600CF75D5 /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
 		4FA3C15E29ED526700CF75D5 /* RouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocols.swift; sourceTree = "<group>"; };
 		4FA3C16229ED54B900CF75D5 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
-		4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOrTextSegment.swift; sourceTree = "<group>"; };
 		4FA72F2729D2078600172B4B /* AccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPresenter.swift; sourceTree = "<group>"; };
 		4FBF32112A1A348700B85D0D /* LeftMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMainEditorView.swift; sourceTree = "<group>"; };
 		4FBF32132A1A367000B85D0D /* RightMainEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMainEditorView.swift; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 		4FC5C99A29E02C89009A351B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4B14A2A1132DD0066A6A5 /* DrawOrTextSegment.swift */,
 				4F794E8B29F809AB007F3EB9 /* GradientLayerView.swift */,
 				4F1453012A1B5BD100C8258B /* ContextMenu */,
 				4FBF320F2A1A33F200B85D0D /* MainEditorView */,
@@ -486,7 +483,6 @@
 				4F051BBD29DC6FCE005F223A /* PhotoCollectionViewCell.swift in Sources */,
 				4FA3C15D29ED4EC600CF75D5 /* DrawingPresenter.swift in Sources */,
 				4F0439D22A1BDBFE00C37990 /* ImageViewTransformation.swift in Sources */,
-				4FA4B14B2A1132DD0066A6A5 /* DrawOrTextSegment.swift in Sources */,
 				4FEDD3872A1CC3E600FED10F /* UIViewTransformation.swift in Sources */,
 				4F5C380C29F6E5F0000BB670 /* PHAssetExtension.swift in Sources */,
 				4F3C73E329E81C1300FCF6D1 /* PhotoService.swift in Sources */,
