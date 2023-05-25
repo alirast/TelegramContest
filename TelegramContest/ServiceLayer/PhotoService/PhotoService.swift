@@ -30,17 +30,16 @@ class PhotoService: PhotoServiceProtocol {
         let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         var assetArray = [PHAsset]()
         assets.enumerateObjects { (object, _, _) in
-            //print("OBJECT: \(object)")
             assetArray.append(object)
         }
+//FIXME: - problem is asset array is empty for the first access
         DispatchQueue.main.async {
             completion(assetArray)
+            print(assetArray.count)
         }
-    }
-//FIXME: - should not be UI code here. move it to presenter at least? 
+    } 
     func showAlert() {
-        let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos.", preferredStyle: .alert)
-//FIXME: - go to settings of the app in phone settings
+        let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos. Please, go into your app privacy settings and allow access.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true)
     }

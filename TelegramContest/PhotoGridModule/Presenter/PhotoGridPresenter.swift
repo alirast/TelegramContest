@@ -26,6 +26,7 @@ class PhotoGridPresenter: PhotoGridPresenterProtocol {
         photoService.getPhotos { [weak self] assets in
             //if self was deleted - nil
             guard let self = self else { return }
+//problem
             DispatchQueue.main.async {
                 self.pictures = assets
                 self.photoGridView?.showPhotos(assets)

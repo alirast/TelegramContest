@@ -21,12 +21,9 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
         super.viewDidLoad()
         createCollectionView()
         presenter.getPhotos()
+        //IT WORKSgetPictures()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //collectionView.reloadData()
-    }
 //MARK: - createCollectionView
     func createCollectionView() {
         collectionView.dataSource = self
@@ -46,11 +43,22 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
 //MARK: - extensionDataSource
 extension PhotoGridViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //WORKS return imageArray.count
         return presenter.pictures?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+        /*WORKS
+         let asset = imageArray[indexPath.row]
+        let manager = PHImageManager.default()
+        manager.requestImage(for: asset, targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: nil) { (image, _) in
+            DispatchQueue.main.async {
+                cell.imageView.image = image
+            }
+        }
+        return cell*/
+        
         //get particular asset for particular index
         guard let asset = presenter.pictures?[indexPath.row] else { return UICollectionViewCell() }
         //get image from the asset because asset is not an image yet
@@ -64,9 +72,23 @@ extension PhotoGridViewController: UICollectionViewDataSource {
         }
         return cell
     }
+    /*WORKS
+    func getPictures() {
+        PHPhotoLibrary.requestAuthorization { [weak self] status in
+            if status == .authorized {
+                let assets = PHAsset.fetchAssets(with: .image, options: nil)
+                assets.enumerateObjects { (object, _, _) in
+                    self?.imageArray.append(object)
+                }
+                self?.imageArray.reverse()
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }
+        }
+    }*/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//TODO: - transition to drawingVC (through presenter and router, not through present(_:animated:)
         let picture = presenter.pictures?[indexPath.row]
         presenter.tapOnThePicture(picture: picture)
     }
