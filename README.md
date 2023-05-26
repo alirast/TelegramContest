@@ -19,4 +19,4 @@ Lottie
 
 PencilKit
 ### Requirements
-iOS 14.5
+iOS 14.5 (minimum)
