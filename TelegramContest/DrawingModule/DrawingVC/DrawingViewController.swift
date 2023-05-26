@@ -273,6 +273,13 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.delegate = self
         containerView.addSubview(canvasView)
     }
+    
+    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
+        rightMainEditorView.downloadButton.tintColor = .white
+        if canvasView.drawing.bounds.isEmpty {
+            rightMainEditorView.downloadButton.tintColor = .gray
+        }
+    }
 
 //MARK: - navigation buttons
     @objc private func undoTapped() {
