@@ -37,6 +37,11 @@ class PhotoGridViewController: UIViewController, UICollectionViewDelegate, Photo
         }
     }
     
+    func showWarning() {
+        let alertController = UIAlertController(title: "Warning", message: "Sorry, you can't use the app without allowing access to your photos. Please, go into the app privacy settings and allow access.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertController, animated: true)
+    }
 }
 //MARK: - extensionDataSource
 extension PhotoGridViewController: UICollectionViewDataSource {

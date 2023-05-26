@@ -9,7 +9,7 @@ import Foundation
 import Photos
 
 protocol PhotoServiceProtocol {
-    func getPictures(completion: @escaping ([PHAsset]) -> Void)
+    func getPictures(completion: @escaping ([PHAsset]) -> Void, error: @escaping () -> Void)
 }
 
 

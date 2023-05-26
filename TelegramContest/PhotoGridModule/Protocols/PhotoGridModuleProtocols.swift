@@ -11,6 +11,7 @@ import Photos
 //protocol for view
 protocol PhotoGridViewProtocol: AnyObject {
     func showPhotos(_ photos: [PHAsset])
+    func showWarning()
 }
 
 //protocol for presenter

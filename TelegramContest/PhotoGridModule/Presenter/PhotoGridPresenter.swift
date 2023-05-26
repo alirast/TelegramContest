@@ -23,6 +23,8 @@ class PhotoPresenter: PhotoGridPresenterProtocol {
     func getPhotos() {
         photoService.getPictures { [weak self] pics in
             self?.photoGridView?.showPhotos(pics)
+        } error: { [weak self] in
+            self?.photoGridView?.showWarning()
         }
     }
     
