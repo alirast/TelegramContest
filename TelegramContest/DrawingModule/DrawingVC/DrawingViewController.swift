@@ -116,7 +116,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         navigationItem.hidesBackButton = true
         
-        clearAllNavigationBarButton.tintColor = .white
+        clearAllNavigationBarButton.tintColor = .gray
         clearAllNavigationBarButton.target = self
         clearAllNavigationBarButton.action = #selector(clearAll)
         
@@ -276,8 +276,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
         rightMainEditorView.downloadButton.tintColor = .white
+        clearAllNavigationBarButton.tintColor = .white
         if canvasView.drawing.bounds.isEmpty {
             rightMainEditorView.downloadButton.tintColor = .gray
+            clearAllNavigationBarButton.tintColor = .gray
         }
     }
 
