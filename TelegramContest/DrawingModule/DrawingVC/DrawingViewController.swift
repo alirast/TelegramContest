@@ -477,6 +477,12 @@ extension DrawingViewController: MainEditorDelegate {
         return newImage
     }
     
+    private func showSaveAlert() {
+        let alert = UIAlertController(title: "Saved", message: "Your image is saved to the gallery.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     
     func saveImageToPhotos() {
         print("save image to photos")
@@ -484,6 +490,7 @@ extension DrawingViewController: MainEditorDelegate {
         if let editedImage = self.createFullImage(drawingLayer: drawing) {
             UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)
         }
+        self.showSaveAlert()
     }
 }
 
