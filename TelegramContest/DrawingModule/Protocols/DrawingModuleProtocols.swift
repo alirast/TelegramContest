@@ -15,7 +15,7 @@ protocol DrawingViewProtocol: AnyObject {
 
 //protocol for presenter
 protocol DrawingPresenterProtocol: AnyObject {
-    init(view: DrawingViewProtocol, photoService: ServiceProtocol, router: RouterProtocol, photo: PHAsset?)
+    init(view: DrawingViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol, photo: PHAsset?)
     func setPhoto()
     func undoAction()
 }

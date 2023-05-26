@@ -18,7 +18,7 @@ class ModuleBuilder: ModuleBuilderProtocol {
     
     func createPhotoGridModule(router: RouterProtocol) -> UIViewController {
         let photoGridView = PhotoGridViewController()
-        let photoService = Service()
+        let photoService = PhotoService()
         let photoGridPresenter = PhotoPresenter(photoGridView: photoGridView, photoService: photoService, router: router)
         photoGridView.presenter = photoGridPresenter
         return photoGridView
@@ -26,7 +26,7 @@ class ModuleBuilder: ModuleBuilderProtocol {
 
     func createDrawingModule(photo: PHAsset?, router: RouterProtocol) -> UIViewController {
         let drawingView = DrawingViewController()
-        let photoService = Service()
+        let photoService = PhotoService()
         let drawingPresenter = DrawingPresenter(view: drawingView, photoService: photoService, router: router, photo: photo)
         drawingView.presenter = drawingPresenter
         return drawingView

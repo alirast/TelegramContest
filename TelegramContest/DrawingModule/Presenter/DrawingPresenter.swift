@@ -11,10 +11,10 @@ import Photos
 class DrawingPresenter: DrawingPresenterProtocol {
     weak var drawingView: DrawingViewProtocol?
     var router: RouterProtocol?
-    let photoService: ServiceProtocol!
+    let photoService: PhotoServiceProtocol!
     var photo: PHAsset?
     
-    required init(view: DrawingViewProtocol, photoService: ServiceProtocol, router: RouterProtocol, photo: PHAsset?) {
+    required init(view: DrawingViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol, photo: PHAsset?) {
         self.drawingView = view
         self.photoService = photoService
         self.router = router

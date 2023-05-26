@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class Service: ServiceProtocol {
+class PhotoService: PhotoServiceProtocol {
     func getPictures(completion: @escaping ([PHAsset]) -> Void) {
         PHPhotoLibrary.requestAuthorization { status in
             if status == .authorized {

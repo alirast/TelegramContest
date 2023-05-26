@@ -12,9 +12,9 @@ class PhotoPresenter: PhotoGridPresenterProtocol {
     
     weak var photoGridView: PhotoGridViewProtocol?
     var router: RouterProtocol?
-    let photoService: ServiceProtocol
+    let photoService: PhotoServiceProtocol
     
-    required init(photoGridView: PhotoGridViewProtocol, photoService: ServiceProtocol, router: RouterProtocol) {
+    required init(photoGridView: PhotoGridViewProtocol, photoService: PhotoServiceProtocol, router: RouterProtocol) {
         self.photoGridView = photoGridView
         self.photoService = photoService
         self.router = router
