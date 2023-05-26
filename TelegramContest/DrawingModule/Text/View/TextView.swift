@@ -75,7 +75,7 @@ class TextView: UIView {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Wanna write something?"
-            textView.textColor = .lightGray
+            textView.textColor = .darkGray
         }
     }
 

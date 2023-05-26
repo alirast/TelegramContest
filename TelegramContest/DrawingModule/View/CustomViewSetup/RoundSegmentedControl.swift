@@ -8,7 +8,7 @@
 import UIKit
 
 class RoundSegmentedControl: UISegmentedControl {
-    private lazy var radius: CGFloat = bounds.height / 1.6
+    private lazy var radius: CGFloat = bounds.height / 1.5
     
     override init(items: [Any]?) {
         super.init(items: items)

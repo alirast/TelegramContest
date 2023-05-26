@@ -21,7 +21,7 @@ class RightMainEditorView: UIView, ContextMenuViewDelegate {
         button.setImage(UIImage(named: "add")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white
         button.backgroundColor = .black
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 15
         button.menu = contextMenu.menu
         button.showsMenuAsPrimaryAction = true
         return button
