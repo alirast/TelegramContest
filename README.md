@@ -18,5 +18,7 @@ Drawing and text editor developed for Telegram iOS Contest 2022.
 Lottie
 
 PencilKit
+
+PhotoKit (Photos)
 ### Requirements
 iOS 14.5 (minimum)
