@@ -28,4 +28,8 @@ class DrawingPresenter: DrawingPresenterProtocol {
     func undoAction() {
         router?.showPhotoGrid()
     }
+    
+    func backToLaunch() {
+        router?.showAccessViewController()
+    }
 }

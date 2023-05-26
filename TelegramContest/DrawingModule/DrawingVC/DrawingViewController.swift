@@ -149,6 +149,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         
         leftMainEditorView.colorWheel.addTarget(self, action: #selector(changingColor(sender:)), for: .valueChanged)
         
+        leftMainEditorView.cancelAndBackButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             leftMainEditorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             leftMainEditorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
@@ -284,6 +286,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
         canvasView.drawing = PKDrawing()
         textViewContainer.removeFromSuperview()
         shapeImage.removeFromSuperview()
+    }
+    
+    @objc private func backTapped() {
+        presenter.backToLaunch()
     }
     
 //MARK: - colorWheel will update tool's tip color
