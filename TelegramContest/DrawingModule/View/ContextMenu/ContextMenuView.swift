@@ -20,8 +20,6 @@ class ContextMenuView: UIView {
     
     lazy var shapeRectangle: UIAction = {
         var rectangle = UIAction(title: "Rectangle", image: UIImage(named: Shape.shapeRectangle.rawValue)) { action in
-            print("Rectangle chosen")
-            
             self.createShape(Shape.shapeRectangle.rawValue)
         }
         
@@ -30,8 +28,6 @@ class ContextMenuView: UIView {
     
     lazy var shapeEllipse: UIAction = {
         var ellipse = UIAction(title: "Ellipse", image: UIImage(named: Shape.shapeEllipse.rawValue)) { action in
-            print("Ellipse chosen")
-            
             self.createShape(Shape.shapeEllipse.rawValue)
         }
         return ellipse
@@ -39,8 +35,6 @@ class ContextMenuView: UIView {
     
     lazy var shapeBubble: UIAction = {
         var bubble = UIAction(title: "Bubble", image: UIImage(named: Shape.shapeBubble.rawValue)) { action in
-            print("Bubble chosen")
-            
             self.createShape(Shape.shapeBubble.rawValue)
         }
         return bubble
@@ -48,18 +42,13 @@ class ContextMenuView: UIView {
     
     lazy var shapeStar: UIAction = {
         var star = UIAction(title: "Star", image: UIImage(named: Shape.shapeStar.rawValue)) { action in
-            print("Star chosen")
-            
             self.createShape(Shape.shapeStar.rawValue)
         }
         return star
     }()
     
     lazy var shapeArrow: UIAction = {
-        var arrow = UIAction(title: "Arrow", image: UIImage(named: Shape.shapeArrow.rawValue)) {
-            action in
-            print("Arrow chosen")
-            
+        var arrow = UIAction(title: "Arrow", image: UIImage(named: Shape.shapeArrow.rawValue)) { action in
             self.createShape(Shape.shapeArrow.rawValue)
         }
         return arrow
@@ -71,7 +60,6 @@ class ContextMenuView: UIView {
     }()
     
     func createShape(_ shape: Shape.RawValue) {
-        print("create shape")
         let image = UIImageView(image: UIImage(named: shape))
         delegate?.addShapeToButton(image)
     }

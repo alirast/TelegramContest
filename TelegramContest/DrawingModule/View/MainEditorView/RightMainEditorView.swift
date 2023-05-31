@@ -67,8 +67,6 @@ class RightMainEditorView: UIView, ContextMenuViewDelegate {
     }
     
     func addShapeToButton(_ image: UIImageView) {
-        print("add shape to button")
-        print(image.image == nil)
         presentationDelegate?.addImageToViewController(image)
     }
 }

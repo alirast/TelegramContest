@@ -285,13 +285,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 
 //MARK: - navigation buttons
     @objc private func undoTapped() {
-        print("undo tapped")
         //go back to second screen through presenter
         presenter.undoAction()
     }
     
     @objc private func clearAll() {
-        print("clear all")
         canvasView.drawing = PKDrawing()
         textViewContainer.removeFromSuperview()
         shapeImage.removeFromSuperview()
@@ -340,9 +338,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
 
     @objc func penTapped() {
-        print("pen tapped")
         selectedTool = pen
-        print(selectedTool)
         canvasView.tool = PKInkingTool(.pen)
         print("final pen width", toolWidth)
         print("final pen color", toolColor)
@@ -351,9 +347,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     @objc func pencilTapped() {
-        print("pencil tapped")
         selectedTool = pencil
-        print(selectedTool)
 
         canvasView.tool = PKInkingTool(.pencil)
         print("final pencil width", toolWidth)
@@ -364,9 +358,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     @objc func brushTapped() {
-        print("brush tapped")
         selectedTool = brush
-        print(selectedTool)
 
         canvasView.tool = PKInkingTool(.marker)
         print("final brush width", toolWidth)
@@ -377,9 +369,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     @objc func eraserTapped() {
-        print("eraser tapped")
         selectedTool = eraser
-        print(selectedTool)
         
         if #available(iOS 16.4, *) {
             canvasView.tool = PKEraserTool(.bitmap, width: 20)
@@ -389,9 +379,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
     }
     
     @objc func lassoTapped() {
-        print("lasso tapped")
         selectedTool = lasso
-        print(selectedTool)
         canvasView.tool = PKLassoTool()
     }
     
@@ -449,13 +437,10 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, DrawingView
 
 extension DrawingViewController: MainEditorDelegate {
     func chooseDrawOrText(_ switcher: UISegmentedControl) {
-        print("IN DRAWING VIEW CONTROLLER CHOOSE DRAW OR TEXT")
         switch switcher.selectedSegmentIndex {
         case 0:
-            print("DRAW")
             textSlider.removeFromSuperview()
         case 1:
-            print("TEXT")
             setupTextView()
             setupTextSlider()
         default:
@@ -485,7 +470,6 @@ extension DrawingViewController: MainEditorDelegate {
     
     
     func saveImageToPhotos() {
-        print("save image to photos")
         let drawing = self.canvasView.drawing.image(from: self.canvasView.bounds, scale: 0)
         if let editedImage = self.createFullImage(drawingLayer: drawing) {
             UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)
@@ -496,14 +480,11 @@ extension DrawingViewController: MainEditorDelegate {
 
 extension DrawingViewController: PresentationViewDelegate {
     func addImageToViewController(_ image: UIImageView) {
-        print("add image to vc")
-        print(image.image == nil)
         shapeImage = image
         setupShapeImage(shapeImage)
     }
     
     private func setupShapeImage(_ shape: UIImageView) {
-        print("set up shape image")
         shape.translatesAutoresizingMaskIntoConstraints = false
         shape.tintColor = .white
         shape.contentMode = .scaleAspectFit

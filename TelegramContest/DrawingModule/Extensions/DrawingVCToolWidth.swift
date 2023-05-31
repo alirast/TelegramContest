@@ -16,21 +16,18 @@ extension DrawingViewController: UIContextMenuInteractionDelegate {
         
         let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
             let thin = UIAction(title: "Thin", image: UIImage(named: Width.thin.rawValue)) { [self] action in
-                print("thin chosen")
                 toolWidth = 5.0
                 setupWidth(toolWidth)
                 print("configuration \(toolWidth)")
             }
             
             let medium = UIAction(title: "Medium", image: UIImage(named: Width.medium.rawValue)) { [self] action in
-                print("medium chosen")
                 toolWidth = 30.0
                 setupWidth(toolWidth)
                 print("configuration \(toolWidth)")
             }
             
             let bold = UIAction(title: "Bold", image: UIImage(named: Width.bold.rawValue)) { [self] action in
-                print("bold chosen")
                 toolWidth = 200.0
                 setupWidth(self.toolWidth)
                 print("configuration \(toolWidth)")
