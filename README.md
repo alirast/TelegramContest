@@ -1,6 +1,6 @@
 # TelegramContest
 ## Description
-Drawing and text editor developed for Telegram iOS Contest 2022. 
+Drawing and text media editor developed for Telegram iOS Contest 2022. 
 
 ## Preview
 <img width="365" alt="1" src="https://github.com/alirast/TelegramContest/assets/97385918/aeb7251c-949a-415e-8f64-bb5a4179b18d">
